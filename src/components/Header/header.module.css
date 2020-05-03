@@ -1,0 +1,17 @@
+.h1 {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+
+	font-size: 10vh;
+
+	@apply absolute
+		pointer-events-auto
+		uppercase
+		font-bold
+		font-display
+		leading-tight
+		flex-col-reverse
+		flex
+		items-start
+		p-12;
+}

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import PostLink from '../components/atoms/PostLink';
 import Layout from '../components/Layout/Layout';
+import SEO from '../components/seo';
 
 export default function Index({ data }) {
 	const { pages, introContent } = data;
@@ -13,9 +14,10 @@ export default function Index({ data }) {
 
 	return (
 		<Layout>
+			<SEO title="Home"></SEO>
 			<div>{introContent.frontmatter.title}</div>
 			<div dangerouslySetInnerHTML={{ __html: introContent.html }}></div>
-			{/* <div>{Posts}</div> */}
+			<div>{Posts}</div>
 		</Layout>
 	);
 }

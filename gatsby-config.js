@@ -5,15 +5,7 @@ module.exports = {
 		author: `@danproudfeet`
 	},
 	plugins: [
-		{
-			resolve: `gatsby-plugin-sass`,
-			options: {
-				postCssPlugins: [
-					require('tailwindcss'),
-					require('./tailwind.config.js') // Optional: Load custom Tailwind CSS configuration
-				]
-			}
-		},
+		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -43,6 +35,16 @@ module.exports = {
 				path: `${__dirname}/src/markdown`
 			}
 		},
-		`gatsby-transformer-remark`
+		`gatsby-transformer-remark`,
+		{
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			options: {
+				fonts: [
+					{
+						family: `Bevan`
+					}
+				]
+			}
+		}
 	]
 };
