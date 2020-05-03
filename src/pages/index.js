@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import PostLink from '../components/atoms/PostLink';
+import Layout from '../components/Layout/Layout';
 
 export default function Index({
 	data: {
@@ -12,7 +13,11 @@ export default function Index({
 		.filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
 		.map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
 
-	return <div>{Posts}</div>;
+	return (
+		<Layout>
+			<div>{Posts}</div>
+		</Layout>
+	);
 }
 
 export const pageQuery = graphql`
