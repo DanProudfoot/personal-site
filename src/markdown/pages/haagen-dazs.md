@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/haagen-dazs'
 date: '2020-05-03'
 title: 'Haagen-Dazs Now'

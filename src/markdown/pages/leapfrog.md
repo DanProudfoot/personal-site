@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/leapfrog'
 date: '2020-05-03'
 title: 'Leapfrog LeapStart'

@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/funko-animation'
 date: '2020-05-03'
 title: 'Funko Animation Studios'

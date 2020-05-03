@@ -15,11 +15,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 		{
 			allMarkdownRemark(
 				sort: { order: DESC, fields: [frontmatter___date] }
+				filter: { frontmatter: { type: { eq: "work" } } }
 				limit: 1000
 			) {
 				edges {
 					node {
 						frontmatter {
+							type
 							path
 						}
 					}

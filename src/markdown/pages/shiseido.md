@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/shiseido'
 date: '2020-05-03'
 title: 'NARS / Laura Mercier'

@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/vodafone-pinball'
 date: '2020-05-03'
 title: 'Vodafone 5G Giga Pinball'

@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/purdeys-positivity'
 date: '2020-05-03'
 title: 'Purdeys Positivity'

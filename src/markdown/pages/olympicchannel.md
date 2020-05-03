@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/olympicchannel'
 date: '2020-05-03'
 title: 'Mind on Olympic Channel'

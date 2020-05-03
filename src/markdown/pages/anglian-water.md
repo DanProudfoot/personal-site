@@ -1,4 +1,5 @@
 ---
+type: 'work'
 path: '/work/anglian-water'
 date: '2020-05-03'
 title: 'Anglian Water'
