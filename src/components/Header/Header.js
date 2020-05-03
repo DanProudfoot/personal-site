@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
+import { useMeasure, useWindowSize } from 'react-use';
 
 import style from './header.module.css';
 
@@ -10,8 +11,22 @@ const MotionLink = motion.custom(Link);
 export default function Header({ location }) {
 	const isWork = location.pathname.includes('work');
 
+	const [firstRef, { height: firstHeight }] = useMeasure();
+	const [surnameRef, { height: surnameHeight }] = useMeasure();
+	const { height } = useWindowSize();
+
 	const { scrollYProgress } = useViewportScroll();
-	const y = useTransform(scrollYProgress, [0, 1], ['0vh', '100vh']);
+
+	const firstY = useTransform(
+		scrollYProgress,
+		[0, 1],
+		[0, height - firstHeight - 72]
+	);
+	const surnameY = useTransform(
+		scrollYProgress,
+		[0, 1],
+		[0, height - surnameHeight - 72]
+	);
 
 	return (
 		<header
@@ -45,7 +60,9 @@ export default function Header({ location }) {
 					to="/"
 					className="block"
 				>
-					<motion.div style={{ y }}>Dan</motion.div>
+					<motion.div ref={firstRef} style={{ y: firstY }}>
+						Dan
+					</motion.div>
 				</MotionLink>
 				<MotionLink
 					initial={{ x: isWork ? '-100%' : '0%' }}
@@ -60,7 +77,9 @@ export default function Header({ location }) {
 					to="/"
 					className="block"
 				>
-					Proudfoot
+					<motion.div ref={surnameRef} style={{ y: surnameY }}>
+						Proudfoot
+					</motion.div>
 				</MotionLink>
 			</motion.h1>
 		</header>
