@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import {
+	motion,
+	useViewportScroll,
+	useTransform,
+	useSpring
+} from 'framer-motion';
 import clsx from 'clsx';
 import { useMeasure, useWindowSize } from 'react-use';
 
@@ -27,6 +32,18 @@ export default function Header({ location }) {
 		[0, 1],
 		[0, height - surnameHeight - 72]
 	);
+
+	const firstSpring = useSpring(firstY, {
+		damping: 50,
+		mass: 1,
+		stiffness: 120
+	});
+
+	const surnameSpring = useSpring(surnameY, {
+		damping: 50,
+		mass: 1,
+		stiffness: 120
+	});
 
 	return (
 		<header
@@ -55,14 +72,14 @@ export default function Header({ location }) {
 						damping: 14,
 						mass: 1,
 						stiffness: 120,
-						delay: 0.5
+						delay: 0.3
 					}}
+					style={{ y: firstSpring }}
+					ref={firstRef}
 					to="/"
 					className="block"
 				>
-					<motion.div ref={firstRef} style={{ y: firstY }}>
-						Dan
-					</motion.div>
+					Dan
 				</MotionLink>
 				<MotionLink
 					initial={{ x: isWork ? '-100%' : '0%' }}
@@ -72,14 +89,14 @@ export default function Header({ location }) {
 						damping: 14,
 						mass: 1,
 						stiffness: 120,
-						delay: 0.5
+						delay: 0.3
 					}}
 					to="/"
 					className="block"
+					ref={surnameRef}
+					style={{ y: surnameSpring }}
 				>
-					<motion.div ref={surnameRef} style={{ y: surnameY }}>
-						Proudfoot
-					</motion.div>
+					Proudfoot
 				</MotionLink>
 			</motion.h1>
 		</header>
