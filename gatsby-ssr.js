@@ -8,9 +8,15 @@
 
 const React = require('react');
 const { AnimatePresence } = require('framer-motion');
+const Header = require('./src/components/Header/Header').default;
 
 exports.wrapPageElement = ({ element, props }) => {
 	// props provide same data to Layout as Page element will get
 	// including location, data, etc - you don't need to pass it
-	return <AnimatePresence>{element}</AnimatePresence>;
+	return (
+		<>
+			<Header {...props}></Header>
+			<AnimatePresence>{element}</AnimatePresence>
+		</>
+	);
 };

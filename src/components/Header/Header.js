@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import {
 	motion,
@@ -46,16 +46,12 @@ export default function Header({ location }) {
 	});
 
 	return (
-		<header
-			className={clsx(
-				'fixed h-screen w-screen top-0 pointer-events-none'
-			)}
-		>
+		<header className={clsx(style.header)}>
 			<motion.h1
 				animate
 				className={clsx(style.h1, {
-					'right-0': !isWork,
-					'left-0': isWork
+					[style.right]: !isWork,
+					[style.left]: isWork
 				})}
 				transition={{
 					type: 'spring',
@@ -77,7 +73,7 @@ export default function Header({ location }) {
 					style={{ y: firstSpring }}
 					ref={firstRef}
 					to="/"
-					className="block"
+					className={style.link}
 				>
 					Dan
 				</MotionLink>
@@ -92,7 +88,7 @@ export default function Header({ location }) {
 						delay: 0.3
 					}}
 					to="/"
-					className="block"
+					className={style.link}
 					ref={surnameRef}
 					style={{ y: surnameSpring }}
 				>

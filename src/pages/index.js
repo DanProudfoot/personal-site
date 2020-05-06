@@ -1,23 +1,19 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import PostLink from '../components/atoms/PostLink';
 import Layout from '../components/Layout/Layout';
+import Posts from '../components/Posts/Posts';
 import SEO from '../components/seo';
 
-export default function Index({ data }) {
+export default function Index({ data, location }) {
 	const { pages, introContent } = data;
 
-	const Posts = pages.edges
-		.filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-		.map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
-
 	return (
-		<Layout>
+		<Layout location={location}>
 			<SEO title="Home"></SEO>
 			<div>{introContent.frontmatter.title}</div>
 			<div dangerouslySetInnerHTML={{ __html: introContent.html }}></div>
-			<div>{Posts}</div>
+			<Posts pages={pages}></Posts>
 		</Layout>
 	);
 }

@@ -1,6 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'normalize.css';
+@import './preflight.css';
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	color: rgba(255, 255, 255);
+
+	line-height: 1.25;
+
+	background-color: rgba(26, 32, 44);
+}
+
+body {
+	min-height: 100vh;
+}
 
 main {
 	height: 200vh;
