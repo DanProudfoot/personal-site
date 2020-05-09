@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout/Layout';
+import Layout, { GridArea } from '../components/Layout/Layout';
 import Posts from '../components/Posts/Posts';
+import HTMLContent from '../components/HTMLContent/HTMLContent';
 import SEO from '../components/seo';
 
 export default function Index({ data, location }) {
@@ -11,9 +12,13 @@ export default function Index({ data, location }) {
 	return (
 		<Layout location={location}>
 			<SEO title="Home"></SEO>
-			<div>{introContent.frontmatter.title}</div>
-			<div dangerouslySetInnerHTML={{ __html: introContent.html }}></div>
-			<Posts pages={pages}></Posts>
+			<GridArea type="primary">
+				<div>{introContent.frontmatter.title}</div>
+				<HTMLContent content={introContent.html}></HTMLContent>
+			</GridArea>
+			<GridArea type="secondary">
+				<Posts pages={pages}></Posts>
+			</GridArea>
 		</Layout>
 	);
 }
