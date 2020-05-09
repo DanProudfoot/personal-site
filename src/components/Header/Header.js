@@ -9,6 +9,8 @@ import {
 import clsx from 'clsx';
 import { useMeasure, useWindowSize } from 'react-use';
 
+import Links from '../Links/Links';
+
 import style from './header.module.css';
 
 const MotionLink = motion.custom(Link);
@@ -47,6 +49,7 @@ export default function Header({ location }) {
 
 	return (
 		<header className={clsx(style.header)}>
+			<Links></Links>
 			<motion.h1
 				animate
 				className={clsx(style.h1, {

@@ -5,21 +5,23 @@
 	top: 0;
 
 	pointer-events: none;
+
+	z-index: 10;
 }
 
 .h1 {
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
-	font-size: 10vh;
+	font-size: 12vh;
 	text-transform: uppercase;
-	font-weight: var(--fw-semibold);
-	line-height: 1.25;
+	font-weight: var(--fw-bold);
+	line-height: 0.775;
 
 	color: var(--color-main);
 
 	position: absolute;
 	height: 100%;
-	padding: 3rem;
+	padding: 0 4rem 0;
 
 	pointer-events: all;
 
