@@ -1,0 +1,37 @@
+.layoutContainer {
+	position: relative;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.layout {
+}
+
+.main {
+	pointer-events: all;
+
+	width: 80vw;
+
+	display: grid;
+	grid-template-columns: 10vw repeat(3, 1fr) 10vw;
+	grid-template-rows: repeat(2, minmax(100vh, max-content));
+	grid-auto-rows: 100vh;
+	grid-template-areas:
+		'. main main . .'
+		'. . secondary secondary .';
+	gap: 20vh 2vw;
+
+	&.alignRight {
+		margin-left: 20vw;
+	}
+}
+
+.gridArea {
+	&.primary {
+		grid-area: main;
+	}
+
+	&.secondary {
+		grid-area: secondary;
+	}
+}

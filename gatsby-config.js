@@ -36,14 +36,14 @@ module.exports = {
 			}
 		},
 		`gatsby-transformer-remark`,
+
 		{
-			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			resolve: `gatsby-plugin-google-fonts`,
 			options: {
 				fonts: [
-					{
-						family: `Bevan`
-					}
-				]
+					`josefin sans\:400,600,700` // you can also specify font weights and styles
+				],
+				display: 'swap'
 			}
 		}
 	]

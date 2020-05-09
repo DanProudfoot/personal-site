@@ -12,14 +12,16 @@
 	text-orientation: mixed;
 	font-size: 10vh;
 	text-transform: uppercase;
-	font-weight: 700;
-	font-family: Bevan, sans-serif;
+	font-weight: var(--fw-semibold);
 	line-height: 1.25;
 
+	color: var(--color-main);
+
 	position: absolute;
+	height: 100%;
 	padding: 3rem;
 
-	pointer-events: auto;
+	pointer-events: all;
 
 	display: flex;
 	flex-direction: column-reverse;
