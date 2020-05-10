@@ -9,5 +9,10 @@ export default function Posts({ pages }) {
 		.filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
 		.map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
 
-	return <div className={style.group}>{Posts}</div>;
+	return (
+		<div className={style.group}>
+			<div>Oberserve! Things I’ve built!</div>
+			{Posts}
+		</div>
+	);
 }

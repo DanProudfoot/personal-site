@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout, { GridArea } from '../components/Layout/Layout';
-import Posts from '../components/Posts/Posts';
-import HTMLContent from '../components/HTMLContent/HTMLContent';
 import SEO from '../components/seo';
+import MDXContent from '../components/MDXContent/MDXContent';
+import Layout, { GridArea } from '../components/Layout/Layout';
+import Box from '../components/Box/Box';
+import Posts from '../components/Posts/Posts';
 
 export default function Index({ data, location }) {
 	const { pages, introContent } = data;
@@ -12,11 +13,17 @@ export default function Index({ data, location }) {
 	return (
 		<Layout location={location}>
 			<SEO title="Home"></SEO>
-			<GridArea type="primary">
-				<div>{introContent.frontmatter.title}</div>
-				<HTMLContent content={introContent.html}></HTMLContent>
+			<GridArea
+				colStart="2"
+				colEnd="span 3"
+				rowStart="1"
+				style={{ alignSelf: 'center' }}
+			>
+				<Box>
+					<MDXContent>{introContent.body}</MDXContent>
+				</Box>
 			</GridArea>
-			<GridArea type="secondary">
+			<GridArea colStart="1" colEnd="span 5" rowStart="2">
 				<Posts pages={pages}></Posts>
 			</GridArea>
 		</Layout>
@@ -25,7 +32,7 @@ export default function Index({ data, location }) {
 
 export const pageQuery = graphql`
 	query {
-		pages: allMarkdownRemark(
+		pages: allMdx(
 			sort: { order: DESC, fields: [frontmatter___date] }
 			filter: { frontmatter: { type: { eq: "work" } } }
 		) {
@@ -41,13 +48,13 @@ export const pageQuery = graphql`
 				}
 			}
 		}
-		introContent: markdownRemark(
+		introContent: mdx(
 			frontmatter: { type: { eq: "site" }, section: { eq: "intro" } }
 		) {
 			frontmatter {
 				title
 			}
-			html
+			body
 		}
 	}
 `;

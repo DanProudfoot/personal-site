@@ -1,0 +1,7 @@
+.box {
+	padding: 2rem 1.5rem;
+	border-radius: 2rem;
+
+	background: linear-gradient(145deg, var(--color-main), #875cff);
+	box-shadow: 9px 9px 18px #bababa, -9px -9px 18px #ffffff;
+}

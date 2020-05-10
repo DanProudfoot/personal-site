@@ -43,20 +43,33 @@ export default function Layout({ children, location }) {
 				variants={variants}
 				className={style.layout}
 			>
-				<main
-					className={clsx(style.main, {
-						[style.alignRight]: isWorkPage
-					})}
-				>
-					{children}
-				</main>
+				<main className={clsx(style.main)}>{children}</main>
 			</motion.div>
 		</div>
 	);
 }
 
-export function GridArea({ children, type }) {
-	return <div className={clsx(style.gridArea, style[type])}>{children}</div>;
+export function GridArea({
+	children,
+	colStart = 1,
+	colEnd = 'span 1',
+	rowStart = 1,
+	rowEnd = 'span 1',
+	className,
+	style = {}
+}) {
+	return (
+		<div
+			style={{
+				gridColumn: `${colStart} / ${colEnd}`,
+				gridRow: `${rowStart} / ${rowEnd}`,
+				...style
+			}}
+			className={clsx(style.gridArea, className)}
+		>
+			{children}
+		</div>
+	);
 }
 
 Layout.propTypes = {

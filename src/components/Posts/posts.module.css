@@ -1,7 +1,6 @@
 .group {
-	width: 300px;
 	display: grid;
-	grid-gap: 2.5rem;
-	grid-gap: 2.5rem;
-	gap: 2.5rem;
+
+	grid-template-columns: repeat(5, 1fr);
+	gap: 32px;
 }
