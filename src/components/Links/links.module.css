@@ -1,0 +1,50 @@
+.group {
+	margin-top: 64px;
+	margin-left: 54px;
+
+	padding: 0px 10px;
+
+	pointer-events: all;
+
+	display: flex;
+	align-items: stretch;
+	border-radius: 30px;
+	backdrop-filter: blur(10px);
+
+	width: max-content;
+}
+
+.link {
+	font-weight: var(--fw-semibold);
+	font-size: 24px;
+
+	display: block;
+
+	box-shadow: 'inset 0px 4px 0px rgba(0, 0, 0, 0.0)';
+	border-radius: 0.5em;
+
+	display: flex;
+	align-items: center;
+
+	& + & {
+		margin-left: 40px;
+	}
+}
+
+.padTop {
+	padding: 12px 9px;
+}
+
+.padAll {
+	padding: 12px;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+.icon {
+	width: 48px;
+	height: 48px;
+	display: block;
+}

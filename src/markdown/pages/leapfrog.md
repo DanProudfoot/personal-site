@@ -4,7 +4,7 @@ path: '/work/leapfrog'
 date: '2020-05-03'
 title: 'Leapfrog LeapStart'
 link: ''
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/gatsby-icon.png'
 builtBy: 'at Kerve'
 stack:
     - Node

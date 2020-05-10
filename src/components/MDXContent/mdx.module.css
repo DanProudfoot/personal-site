@@ -1,0 +1,13 @@
+.mdx {
+	h1 {
+		font-size: 52px;
+		font-weight: var(--fw-semibold);
+		line-height: 1.1;
+		letter-spacing: -3%;
+	}
+
+	p {
+		line-height: 1.1;
+		font-size: 24px;
+	}
+}

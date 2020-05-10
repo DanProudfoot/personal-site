@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
+import style from './layout.module.css';
 import '../../styles/main.css';
 
 const transition = {
@@ -15,11 +16,11 @@ const transition = {
 
 const variants = {
 	page_initial: (custom) => ({
-		x: custom ? '100%' : '-100%',
-		transition
+		x: custom ? '100%' : '-100%'
 	}),
 	page_enter: {
-		x: '0%'
+		x: '0%',
+		transition
 	},
 	page_exit: (custom) => ({
 		x: custom ? '100%' : '-100%',
@@ -29,27 +30,49 @@ const variants = {
 };
 
 export default function Layout({ children, location }) {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
+	const isWorkPage = location.pathname.includes('work');
 
 	return (
-		<motion.div
-			key={location.pathname}
-			initial="page_initial"
-			animate="page_enter"
-			exit="page_exit"
-			custom={location.pathname.includes('work')}
-			variants={variants}
+		<div className={style.layoutContainer}>
+			<motion.div
+				key={location.pathname}
+				initial="page_initial"
+				animate="page_enter"
+				exit="page_exit"
+				custom={isWorkPage}
+				variants={variants}
+				className={style.layout}
+			>
+				<main className={clsx(style.main)}>{children}</main>
+			</motion.div>
+		</div>
+	);
+}
+
+export function GridArea({
+	children,
+	colStart = 1,
+	colEnd = 'span 1',
+	rowStart = 1,
+	rowEnd = 'span 1',
+	className,
+	style: cssStyles,
+	anchor,
+	...props
+}) {
+	return (
+		<div
+			style={{
+				gridColumn: `${colStart} / ${colEnd}`,
+				gridRow: `${rowStart} / ${rowEnd}`,
+				...cssStyles
+			}}
+			className={clsx(style.gridArea, className)}
+			{...props}
 		>
-			<main>{children}</main>
-		</motion.div>
+			{anchor && <div id={anchor} className={style.anchor}></div>}
+			{children}
+		</div>
 	);
 }
 

@@ -7,15 +7,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: `${__dirname}/src/images`
-			}
-		},
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
+
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -31,19 +23,40 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
+				name: `images`,
+				path: `${__dirname}/src/images`
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
 				name: `markdown-pages`,
 				path: `${__dirname}/src/markdown`
 			}
 		},
-		`gatsby-transformer-remark`,
 		{
-			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				extensions: [`.mdx`, `.md`]
+			}
+		},
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
+		{
+			resolve: `gatsby-plugin-google-fonts`,
 			options: {
 				fonts: [
-					{
-						family: `Bevan`
-					}
-				]
+					`josefin sans\:400,600,700` // you can also specify font weights and styles
+				],
+				display: 'swap'
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /images/
+				}
 			}
 		}
 	]

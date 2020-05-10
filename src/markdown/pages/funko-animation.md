@@ -4,7 +4,7 @@ path: '/work/funko-animation'
 date: '2020-05-03'
 title: 'Funko Animation Studios'
 link: 'https://funkoanimationstudios.tv'
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/gatsby-icon.png'
 builtBy: 'by myself'
 stack:
     - Gatsby

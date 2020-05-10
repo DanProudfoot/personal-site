@@ -4,7 +4,7 @@ path: '/work/haagen-dazs'
 date: '2020-05-03'
 title: 'Haagen-Dazs Now'
 link: ''
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/gatsby-icon.png'
 builtBy: 'at Kerve'
 stack:
     - Facebook chatbots

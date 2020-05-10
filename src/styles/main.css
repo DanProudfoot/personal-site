@@ -1,6 +1,16 @@
 @import 'normalize.css';
 @import './preflight.css';
 
+:root {
+	--font-josefin: 'Josefin Sans', sans-serif;
+	--fw-bold: 700;
+	--fw-semibold: 600;
+	--fw-regular: 400;
+
+	--color-main: #7e56f2;
+	--color-white: #fff;
+}
+
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -9,13 +19,12 @@ html {
 
 	line-height: 1.25;
 
-	background-color: rgba(26, 32, 44);
+	background-color: #fff;
+	scroll-behavior: smooth;
 }
 
 body {
 	min-height: 100vh;
-}
 
-main {
-	height: 200vh;
+	font-family: var(--font-josefin);
 }
