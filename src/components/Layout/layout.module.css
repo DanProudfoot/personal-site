@@ -23,3 +23,13 @@
 	padding: 64px;
 	padding-top: 160px;
 }
+
+.gridArea {
+	position: relative;
+}
+
+.anchor {
+	position: absolute;
+	left: 0;
+	top: -128px;
+}

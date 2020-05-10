@@ -7,7 +7,7 @@ export default function TimeOfDay() {
 
 		switch (true) {
 			case hour > 20:
-				return 'Good Night!';
+				return "Nice night, isn't it?";
 
 			case hour > 18:
 				return 'Evening!';
@@ -22,7 +22,7 @@ export default function TimeOfDay() {
 				return 'Why are you still up?!?';
 
 			default:
-				return 'Good Night!';
+				return "Nice night, isn't it?";
 		}
 	}, []);
 

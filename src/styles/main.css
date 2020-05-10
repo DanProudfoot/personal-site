@@ -8,6 +8,7 @@
 	--fw-regular: 400;
 
 	--color-main: #7e56f2;
+	--color-white: #fff;
 }
 
 html {
@@ -19,6 +20,7 @@ html {
 	line-height: 1.25;
 
 	background-color: #fff;
+	scroll-behavior: smooth;
 }
 
 body {

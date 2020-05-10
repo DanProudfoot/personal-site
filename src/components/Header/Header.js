@@ -27,12 +27,12 @@ export default function Header({ location }) {
 	const firstY = useTransform(
 		scrollYProgress,
 		[0, 1],
-		[0, height - firstHeight - 72]
+		[0, height - firstHeight - 144]
 	);
 	const surnameY = useTransform(
 		scrollYProgress,
 		[0, 1],
-		[0, height - surnameHeight - 72]
+		[0, height - surnameHeight - 144]
 	);
 
 	const firstSpring = useSpring(firstY, {

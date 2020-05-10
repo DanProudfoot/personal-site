@@ -56,17 +56,21 @@ export function GridArea({
 	rowStart = 1,
 	rowEnd = 'span 1',
 	className,
-	style = {}
+	style: cssStyles,
+	anchor,
+	...props
 }) {
 	return (
 		<div
 			style={{
 				gridColumn: `${colStart} / ${colEnd}`,
 				gridRow: `${rowStart} / ${rowEnd}`,
-				...style
+				...cssStyles
 			}}
 			className={clsx(style.gridArea, className)}
+			{...props}
 		>
+			{anchor && <div id={anchor} className={style.anchor}></div>}
 			{children}
 		</div>
 	);

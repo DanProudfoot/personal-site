@@ -13,17 +13,20 @@ export default function Index({ data, location }) {
 	return (
 		<Layout location={location}>
 			<SEO title="Home"></SEO>
+
 			<GridArea
 				colStart="2"
 				colEnd="span 3"
 				rowStart="1"
 				style={{ alignSelf: 'center' }}
+				anchor="top"
 			>
 				<Box>
 					<MDXContent>{introContent.body}</MDXContent>
 				</Box>
 			</GridArea>
-			<GridArea colStart="1" colEnd="span 5" rowStart="2">
+
+			<GridArea colStart="1" colEnd="span 5" rowStart="2" anchor="work">
 				<Posts pages={pages}></Posts>
 			</GridArea>
 		</Layout>
