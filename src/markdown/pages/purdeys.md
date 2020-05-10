@@ -4,7 +4,7 @@ path: '/work/purdeys-positivity'
 date: '2020-05-03'
 title: 'Purdeys Positivity'
 link: 'https://purdeys.com/positivity/'
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/gatsby-icon.png'
 builtBy: 'at Kerve'
 stack:
     - Google Cloud Sentiment Analysis

@@ -4,7 +4,7 @@ path: '/work/vodafone-pinball'
 date: '2020-05-03'
 title: 'Vodafone 5G Giga Pinball'
 link: ''
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/gatsby-icon.png'
 builtBy: 'at Kerve'
 stack:
     - Node on Heroku

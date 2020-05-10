@@ -4,7 +4,7 @@ path: '/work/anglian-water'
 date: '2020-05-03'
 title: 'Anglian Water'
 link: ''
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/gatsby-icon.png'
 builtBy: 'at Kerve'
 stack:
     - Leap Motion

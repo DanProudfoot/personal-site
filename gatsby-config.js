@@ -7,15 +7,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: `${__dirname}/src/images`
-			}
-		},
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
+
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -31,6 +23,13 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
+				name: `images`,
+				path: `${__dirname}/src/images`
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
 				name: `markdown-pages`,
 				path: `${__dirname}/src/markdown`
 			}
@@ -41,7 +40,8 @@ module.exports = {
 				extensions: [`.mdx`, `.md`]
 			}
 		},
-
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {

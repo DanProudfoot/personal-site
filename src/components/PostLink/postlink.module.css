@@ -1,17 +1,11 @@
-.button {
-	padding-left: 2rem;
-	padding-right: 2rem;
-
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-
-	text-align: center;
-	text-transform: uppercase;
-
-	border-width: 2px;
+.box {
+	height: 100%;
 }
 
 .link {
+	border-radius: 30px;
+
 	display: block;
-	perspective: 1000px;
+
+	grid-column-end: span 2;
 }

@@ -2,5 +2,26 @@
 	display: grid;
 
 	grid-template-columns: repeat(5, 1fr);
-	gap: 32px;
+	grid-template-rows: auto;
+	grid-auto-rows: minmax(200px, max-content);
+
+	gap: 48px 32px;
+}
+
+.headingContainer {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+
+	grid-area: 1 / 1 / 1 / span 5;
+
+	font-size: 36px;
+}
+
+.box {
+	grid-column: 3 / span 3;
+}
+
+.heading {
+	color: var(--color-white);
+	line-height: 1;
 }

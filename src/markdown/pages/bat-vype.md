@@ -4,7 +4,7 @@ path: '/work/bat-vype'
 date: '2020-05-03'
 title: 'BAT Retail stores'
 link: ''
-featuredImage: '../images/gatsby-icon.png'
+featuredImage: '../../images/work/vype-store.jpg'
 builtBy: 'at Kerve'
 stack:
     - Fully React
