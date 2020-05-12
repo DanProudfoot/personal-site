@@ -9,7 +9,6 @@ import Box from '../Box/Box';
 import style from './postlink.module.css';
 
 export default function PostLink({ post, index }) {
-	console.log(post);
 	return (
 		<Link
 			className={style.link}
@@ -18,11 +17,17 @@ export default function PostLink({ post, index }) {
 				gridColumnStart: index % 4 === 2 ? 2 : ''
 			}}
 		>
-			<Box className={style.box} whileHover={{ scale: 1.05 }}>
-				{post.frontmatter.title}
+			<Box
+				className={style.box}
+				padding="24"
+				whileHover={{ scale: 1.05 }}
+			>
+				<div className={style.nametag}>{post.frontmatter.title}</div>
 
 				<Image
 					fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+					className={style.bgi}
+					style={{ position: 'absolute' }}
 				></Image>
 			</Box>
 		</Link>

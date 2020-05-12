@@ -15,12 +15,12 @@ export default function Links() {
 	const { scrollY } = useViewportScroll();
 	const backgroundTransform = useTransform(
 		scrollY,
-		[0, 200],
+		[0, 300],
 		['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)']
 	);
 	const colorTransform = useTransform(
 		scrollY,
-		[0, 350],
+		[0, 60],
 		[mainColor, 'rgba(255, 255, 255, 1)']
 	);
 

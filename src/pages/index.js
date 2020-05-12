@@ -29,6 +29,15 @@ export default function Index({ data, location }) {
 			<GridArea colStart="1" colEnd="span 5" rowStart="2" anchor="work">
 				<Posts pages={pages}></Posts>
 			</GridArea>
+
+			<GridArea
+				colStart="3"
+				colEnd="span 2"
+				rowStart="3"
+				anchor="contact"
+			>
+				<Box>Form things here</Box>
+			</GridArea>
 		</Layout>
 	);
 }
@@ -49,7 +58,7 @@ export const pageQuery = graphql`
 						title
 						featuredImage {
 							childImageSharp {
-								fluid(maxWidth: 300) {
+								fluid(maxWidth: 400, quality: 80) {
 									...GatsbyImageSharpFluid
 								}
 							}

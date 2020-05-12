@@ -27,12 +27,12 @@ export default function Header({ location }) {
 	const firstY = useTransform(
 		scrollYProgress,
 		[0, 1],
-		[0, height - firstHeight - 144]
+		[0, height - firstHeight - 64]
 	);
 	const surnameY = useTransform(
 		scrollYProgress,
 		[0, 1],
-		[0, height - surnameHeight - 144]
+		[0, height - surnameHeight - 64]
 	);
 
 	const firstSpring = useSpring(firstY, {
@@ -52,10 +52,7 @@ export default function Header({ location }) {
 			<Links></Links>
 			<motion.h1
 				animate
-				className={clsx(style.h1, {
-					[style.right]: !isWork,
-					[style.left]: isWork
-				})}
+				className={clsx(style.h1)}
 				transition={{
 					type: 'spring',
 					damping: 20,

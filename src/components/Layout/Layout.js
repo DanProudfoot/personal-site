@@ -36,11 +36,11 @@ export default function Layout({ children, location }) {
 		<div className={style.layoutContainer}>
 			<motion.div
 				key={location.pathname}
-				initial="page_initial"
-				animate="page_enter"
-				exit="page_exit"
-				custom={isWorkPage}
-				variants={variants}
+				// initial="page_initial"
+				// animate="page_enter"
+				// exit="page_exit"
+				// custom={isWorkPage}
+				// variants={variants}
 				className={style.layout}
 			>
 				<main className={clsx(style.main)}>{children}</main>

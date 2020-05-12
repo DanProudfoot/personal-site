@@ -29,13 +29,8 @@
 	flex-direction: column-reverse;
 	align-items: flex-start;
 
-	&.right {
-		right: 0;
-	}
-
-	&.left {
-		left: 0;
-	}
+	right: 0;
+	top: 32px;
 }
 
 .link {

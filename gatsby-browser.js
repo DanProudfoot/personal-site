@@ -17,7 +17,9 @@ exports.wrapPageElement = ({ element, props }) => {
 	return (
 		<>
 			<Header {...props}></Header>
-			<AnimatePresence>{element}</AnimatePresence>
+			{/* <AnimatePresence> */}
+			{element}
+			{/* </AnimatePresence> */}
 		</>
 	);
 };
