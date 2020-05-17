@@ -61,8 +61,8 @@ export default function Header({ location }) {
 				}}
 			>
 				<MotionLink
-					initial={{ x: isWork ? '100%' : '0%' }}
-					animate={{ x: isWork ? '100%' : '0%' }}
+					initial={{ x: 300 }}
+					animate={{ x: 0 }}
 					transition={{
 						type: 'spring',
 						damping: 14,
@@ -78,8 +78,8 @@ export default function Header({ location }) {
 					Dan
 				</MotionLink>
 				<MotionLink
-					initial={{ x: isWork ? '-100%' : '0%' }}
-					animate={{ x: isWork ? '-100%' : '0%' }}
+					initial={{ x: 300 }}
+					animate={{ x: 0 }}
 					transition={{
 						type: 'spring',
 						damping: 14,

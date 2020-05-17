@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { motion } from 'framer-motion';
@@ -9,7 +10,7 @@ export default function Box({
 	children,
 	className,
 	padding = '32',
-	type = 'primary',
+	theme = 'primary',
 	fill,
 	...props
 }) {
@@ -18,7 +19,7 @@ export default function Box({
 			className={clsx(
 				style.box,
 				style[`padding_${padding}`],
-				style[`type_${type}`],
+				style[`type_${theme}`],
 				{ [style.fill]: fill },
 				className
 			)}
@@ -28,3 +29,11 @@ export default function Box({
 		</motion.div>
 	);
 }
+
+Box.propTypes = {
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
+	padding: PropTypes.oneOf(['32', '24']),
+	theme: PropTypes.oneOf(['primary', 'secondary', 'none', 'blur']),
+	fill: PropTypes.bool
+};

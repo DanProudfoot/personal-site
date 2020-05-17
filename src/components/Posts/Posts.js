@@ -15,11 +15,7 @@ export default function Posts({ pages }) {
 	return (
 		<div className={style.group}>
 			<div className={style.headingContainer}>
-				<Box className={style.box} padding="24">
-					<h2 className={style.heading}>
-						Oberserve! Things I’ve built!
-					</h2>
-				</Box>
+				<h2 className={style.heading}>Oberserve! Things I’ve built!</h2>
 			</div>
 
 			{Posts}

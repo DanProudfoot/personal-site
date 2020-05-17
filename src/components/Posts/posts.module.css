@@ -9,19 +9,16 @@
 }
 
 .headingContainer {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	display: flex;
 
-	grid-area: 1 / 1 / 1 / span 5;
+	grid-area: 1 / 2 / 1 / span 3;
 
 	font-size: 36px;
 }
 
-.box {
-	grid-column: 3 / span 3;
-}
-
 .heading {
-	color: var(--color-white);
+	color: var(--color-main);
 	line-height: 1;
+
+	font-weight: var(--fw-semibold);
 }

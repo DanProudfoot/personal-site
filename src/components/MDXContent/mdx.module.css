@@ -1,6 +1,6 @@
 .mdx {
 	h1 {
-		font-size: 52px;
+		font-size: 62px;
 		font-weight: var(--fw-semibold);
 		line-height: 1.1;
 		letter-spacing: -3%;
@@ -10,8 +10,18 @@
 		line-height: 1.1;
 		font-size: 22px;
 	}
+}
+
+.default {
+	color: #fff;
 
 	p + p {
 		margin-top: 1em;
+	}
+}
+
+.home {
+	p {
+		color: #000;
 	}
 }

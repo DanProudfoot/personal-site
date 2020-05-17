@@ -1,0 +1,12 @@
+.heading {
+	font-size: 62px;
+	font-weight: var(--fw-semibold);
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+
+	color: var(--color-main);
+}
+
+.heading span {
+	display: block;
+}

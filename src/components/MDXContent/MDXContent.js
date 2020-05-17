@@ -1,12 +1,13 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import style from './mdx.module.css';
 
-export default function MDXContent({ children }) {
+export default function MDXContent({ children, theme = 'default' }) {
 	return (
-		<div className={style.mdx}>
+		<div className={clsx(style.mdx, style[theme])}>
 			<MDXRenderer>{children}</MDXRenderer>
 		</div>
 	);

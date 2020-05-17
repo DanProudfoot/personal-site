@@ -3,9 +3,9 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import MDXContent from '../components/MDXContent/MDXContent';
-import Layout, { GridArea } from '../components/Layout/Layout';
-import Box from '../components/Box/Box';
+import Layout, { Grid, GridArea } from '../components/Layout/Layout';
 import Posts from '../components/Posts/Posts';
+import TimeOfDay from '../components/TimeOfDay/TimeOfDay';
 
 export default function Index({ data, location }) {
 	const { pages, introContent } = data;
@@ -14,30 +14,26 @@ export default function Index({ data, location }) {
 		<Layout location={location}>
 			<SEO title="Home"></SEO>
 
-			<GridArea
-				colStart="2"
-				colEnd="span 3"
-				rowStart="1"
-				style={{ alignSelf: 'center' }}
-				anchor="top"
-			>
-				<Box>
-					<MDXContent>{introContent.body}</MDXContent>
-				</Box>
-			</GridArea>
+			<Grid rows="1fr auto max-content 1fr">
+				<GridArea
+					colStart="2"
+					colEnd="span 3"
+					rowStart="2"
+					anchor="top"
+				>
+					<TimeOfDay></TimeOfDay>
+				</GridArea>
 
-			<GridArea colStart="1" colEnd="span 5" rowStart="2" anchor="work">
-				<Posts pages={pages}></Posts>
-			</GridArea>
+				<GridArea colStart="3" colEnd="span 3" rowStart="3">
+					<MDXContent theme="home">{introContent.body}</MDXContent>
+				</GridArea>
+			</Grid>
 
-			<GridArea
-				colStart="3"
-				colEnd="span 2"
-				rowStart="3"
-				anchor="contact"
-			>
-				<Box>Form things here</Box>
-			</GridArea>
+			<Grid>
+				<GridArea colStart="1" colEnd="span 5" anchor="work">
+					<Posts pages={pages}></Posts>
+				</GridArea>
+			</Grid>
 		</Layout>
 	);
 }

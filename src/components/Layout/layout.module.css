@@ -2,6 +2,12 @@
 	position: relative;
 	overflow: hidden;
 	pointer-events: none;
+
+	width: 100%;
+	min-height: 100vh;
+
+	top: 0;
+	left: 0;
 }
 
 .layout {
@@ -9,19 +15,28 @@
 	width: 100%;
 
 	margin: 0 auto;
+
+	--vertical-space: 32px;
 }
 
 .main {
 	pointer-events: all;
 
+	padding: var(--vertical-space);
+	padding-top: calc(var(--vertical-space) * 3);
+}
+
+.grid {
+	min-height: calc(100vh - var(--vertical-space) * 4);
+
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-	grid-auto-rows: minmax(80vh, max-content);
 
-	gap: 10vh 32px;
+	gap: var(--vertical-space);
 
-	padding: 64px;
-	padding-top: 160px;
+	& + & {
+		margin-top: var(--vertical-space);
+	}
 }
 
 .gridArea {

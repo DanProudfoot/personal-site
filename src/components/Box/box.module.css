@@ -24,6 +24,11 @@
 	background-color: var(--color-secondary);
 }
 
+.type_blur {
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blue(10px);
+}
+
 .fill {
 	height: 100%;
 	overflow: hidden;

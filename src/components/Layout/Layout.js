@@ -6,45 +6,32 @@ import { motion } from 'framer-motion';
 import style from './layout.module.css';
 import '../../styles/main.css';
 
-const transition = {
-	type: 'spring',
-	damping: 20,
-	mass: 1,
-	stiffness: 20,
-	delay: 0.1
-};
-
-const variants = {
-	page_initial: (custom) => ({
-		x: custom ? '100%' : '-100%'
-	}),
-	page_enter: {
-		x: '0%',
-		transition
-	},
-	page_exit: (custom) => ({
-		x: custom ? '100%' : '-100%',
-		position: 'absolute',
-		transition
-	})
-};
-
 export default function Layout({ children, location }) {
-	const isWorkPage = location.pathname.includes('work');
-
 	return (
-		<div className={style.layoutContainer}>
-			<motion.div
-				key={location.pathname}
-				// initial="page_initial"
-				// animate="page_enter"
-				// exit="page_exit"
-				// custom={isWorkPage}
-				// variants={variants}
-				className={style.layout}
-			>
+		<motion.div
+			key={location.key}
+			className={style.layoutContainer}
+			exit={{ position: 'absolute', zIndex: 10, opacity: 0 }}
+		>
+			<div className={style.layout}>
 				<main className={clsx(style.main)}>{children}</main>
-			</motion.div>
+			</div>
+		</motion.div>
+	);
+}
+
+export function Grid({ children, columns, rows, style: cssStyles, ...props }) {
+	return (
+		<div
+			className={clsx(style.grid)}
+			style={{
+				gridTemplateColumns: columns,
+				gridTemplateRows: rows,
+				...cssStyles
+			}}
+			{...props}
+		>
+			{children}
 		</div>
 	);
 }

@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { useCSSVariable } from '../../hooks';
 
 import Github from '../../images/github.svg';
+import Email from '../../images/at-sign.svg';
 import Twitter from '../../images/twitter.svg';
 
 import style from './links.module.css';
@@ -38,10 +39,12 @@ export default function Links() {
 			<ExternalLink to="https://github.com/DanProudfoot">
 				<Github className={style.icon}></Github>
 			</ExternalLink>
+			<ExternalLink to="mailto:dan@danproudfoot.co.uk">
+				<Email className={style.icon}></Email>
+			</ExternalLink>
 
-			<HashLink to="#">Top</HashLink>
-			<HashLink to="#work">Work</HashLink>
-			<HashLink to="#contact">Contact</HashLink>
+			<HashLink to="/#">Top</HashLink>
+			<HashLink to="/#work">Work</HashLink>
 		</motion.div>
 	);
 }
