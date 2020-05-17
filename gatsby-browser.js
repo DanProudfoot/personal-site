@@ -8,7 +8,7 @@
 // You can delete this file if you're not using it
 
 const React = require('react');
-const { AnimatePresence } = require('framer-motion');
+const { AnimateSharedLayout } = require('framer-motion');
 const Header = require('./src/components/Header/Header').default;
 
 exports.wrapPageElement = ({ element, props }) => {
@@ -17,9 +17,9 @@ exports.wrapPageElement = ({ element, props }) => {
 	return (
 		<>
 			<Header {...props}></Header>
-			{/* <AnimatePresence> */}
-			{element}
-			{/* </AnimatePresence> */}
+			<AnimateSharedLayout type="crossfade">
+				{element}
+			</AnimateSharedLayout>
 		</>
 	);
 };
