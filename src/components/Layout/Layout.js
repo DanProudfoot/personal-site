@@ -38,26 +38,20 @@ export function Grid({ children, columns, rows, style: cssStyles, ...props }) {
 
 export function GridArea({
 	children,
-	colStart = 1,
-	colEnd = 'span 1',
-	rowStart = 1,
-	rowEnd = 'span 1',
+	area = '',
 	className,
 	style: cssStyles,
-	anchor,
 	...props
 }) {
 	return (
 		<div
 			style={{
-				gridColumn: `${colStart} / ${colEnd}`,
-				gridRow: `${rowStart} / ${rowEnd}`,
+				gridArea: area,
 				...cssStyles
 			}}
 			className={clsx(style.gridArea, className)}
 			{...props}
 		>
-			{anchor && <div id={anchor} className={style.anchor}></div>}
 			{children}
 		</div>
 	);

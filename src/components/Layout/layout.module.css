@@ -23,19 +23,25 @@
 	pointer-events: all;
 
 	padding: var(--vertical-space);
-	padding-top: calc(var(--vertical-space) * 3);
+	padding-top: calc(var(--vertical-space) * 4);
 }
 
 .grid {
-	min-height: calc(100vh - var(--vertical-space) * 4);
+	min-height: calc(100vh - var(--vertical-space) * 5);
 
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: 1fr;
 
+	grid-template-rows: 1fr repeat(2, min-content) 1fr;
+	grid-auto-rows: 1fr;
 	gap: var(--vertical-space);
 
 	& + & {
 		margin-top: var(--vertical-space);
+	}
+
+	@media (--viewport-tablet) {
+		grid-template-columns: repeat(6, 1fr);
 	}
 }
 
