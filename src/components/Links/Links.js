@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
+import { Link } from 'gatsby';
 
 import { useCSSVariable } from '../../hooks';
 
@@ -43,9 +44,28 @@ export default function Links() {
 				<Email className={style.icon}></Email>
 			</ExternalLink>
 
-			<HashLink to="/#">Top</HashLink>
-			<HashLink to="/#work">Work</HashLink>
+			<LinkLink to="/">Top</LinkLink>
+			<LinkLink to="/work">Work</LinkLink>
 		</motion.div>
+	);
+}
+
+const MotionLink = motion.custom(Link);
+
+function LinkLink({ children, className, ...props }) {
+	return (
+		<MotionLink
+			className={clsx(style.link, style.padTop, className)}
+			variants={{
+				hover: { boxShadow: 'inset 0px 4px 8px rgba(0, 0, 0, 0.25)' },
+				tap: { boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.35)' }
+			}}
+			whileHover="hover"
+			whileTap="tap"
+			{...props}
+		>
+			{children}
+		</MotionLink>
 	);
 }
 
