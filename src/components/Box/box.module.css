@@ -17,7 +17,7 @@
 }
 
 .type_primary {
-	background-color: var(--color-main);
+	background-color: var(--color-theme);
 }
 
 .type_secondary {

@@ -12,6 +12,8 @@
 	backdrop-filter: blur(10px);
 
 	width: max-content;
+
+	color: var(--color-theme);
 }
 
 .link {

@@ -1,9 +1,9 @@
 @import 'normalize.css';
 @import './preflight.css';
 
-@custom-media --viewport-big-phone (min-width: 480px);
-@custom-media --viewport-tablet (min-width: 768px);
-@custom-media --viewport-desktop (min-width: 1024px);
+@custom-media --viewport-big-phone (width >= 480px);
+@custom-media --viewport-tablet (width >= 768px);
+@custom-media --viewport-desktop (width >= 1024px);
 
 :root {
 	--font-josefin: 'Josefin Sans', sans-serif;
@@ -14,6 +14,8 @@
 	--color-main: #7e56f2;
 	--color-secondary: #ff5c93;
 	--color-white: #fff;
+
+	--color-theme: #7e56f2;
 }
 
 html {

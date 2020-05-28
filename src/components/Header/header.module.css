@@ -17,7 +17,7 @@
 	font-weight: var(--fw-bold);
 	line-height: 0.775;
 
-	color: var(--color-main);
+	color: var(--color-theme);
 
 	position: absolute;
 	padding: 0 4rem 0;

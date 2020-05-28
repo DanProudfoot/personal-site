@@ -9,7 +9,7 @@ import Box from '../components/Box/Box';
 export default function Work({ location, data }) {
 	console.log(data);
 	return (
-		<Layout location={location}>
+		<Layout location={location} colorTheme="--color-secondary">
 			<SEO title="Wot I made"></SEO>
 
 			<Grid>

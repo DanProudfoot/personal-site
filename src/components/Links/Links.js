@@ -12,7 +12,7 @@ import Twitter from '../../images/twitter.svg';
 import style from './links.module.css';
 
 export default function Links() {
-	const mainColor = useCSSVariable('--color-main');
+	const mainColor = useCSSVariable('--color-theme');
 
 	const { scrollY } = useViewportScroll();
 	const backgroundTransform = useTransform(

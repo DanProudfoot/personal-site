@@ -17,7 +17,7 @@
 }
 
 .heading {
-	color: var(--color-main);
+	color: var(--color-theme);
 	line-height: 1;
 
 	font-weight: var(--fw-semibold);

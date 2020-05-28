@@ -16,6 +16,15 @@
 		font-weight: 600;
 		color: var(--color-main);
 	}
+
+	a {
+		text-decoration: underline var(--color-secondary) dashed;
+
+		&:hover {
+			text-decoration: none;
+			color: var(--color-secondary);
+		}
+	}
 }
 
 .default {

@@ -6,13 +6,22 @@ import { motion } from 'framer-motion';
 import style from './layout.module.css';
 import '../../styles/main.css';
 
-export default function Layout({ children, location }) {
+export default function Layout({
+	children,
+	location,
+	colorTheme = '--color-main'
+}) {
 	return (
 		<motion.div
 			key={location.key}
 			className={style.layoutContainer}
 			exit={{ position: 'absolute', zIndex: 10, opacity: 0 }}
 		>
+			<style>
+				{`:root {
+					--color-theme: var(${colorTheme})
+				}`}
+			</style>
 			<div className={style.layout}>
 				<main className={clsx(style.main)}>{children}</main>
 			</div>

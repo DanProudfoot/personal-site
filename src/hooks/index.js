@@ -1,11 +1,20 @@
-import { useMemo } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 export function useCSSVariable(variable = '--color-main') {
-	const mainColor = useMemo(() => {
-		return getComputedStyle(document.documentElement)
+	const getVar = () =>
+		getComputedStyle(document.documentElement)
 			.getPropertyValue(variable)
 			.trim();
-	}, [variable]);
 
-	return mainColor;
+	const [state, setState] = useState(getVar());
+
+	useLayoutEffect(() => {
+		const val = getVar();
+
+		setState(val);
+
+		console.log('test');
+	});
+
+	return state;
 }
