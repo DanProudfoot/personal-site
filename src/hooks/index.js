@@ -1,20 +1,18 @@
-import { useState, useLayoutEffect } from 'react';
+import { ThemeContext } from '../contexts/index';
+import { useContext, useEffect } from 'react';
 
-export function useCSSVariable(variable = '--color-main') {
-	const getVar = () =>
-		getComputedStyle(document.documentElement)
-			.getPropertyValue(variable)
-			.trim();
+export function useCSSVariable(variable = '--color-main', key) {
+	return getComputedStyle(document.documentElement)
+		.getPropertyValue(variable)
+		.trim();
+}
 
-	const [state, setState] = useState(getVar());
+export function useTheme(update) {
+	const { theme, setTheme } = useContext(ThemeContext);
 
-	useLayoutEffect(() => {
-		const val = getVar();
+	useEffect(() => {
+		setTheme(update);
+	}, [update, setTheme]);
 
-		setState(val);
-
-		console.log('test');
-	});
-
-	return state;
+	return theme;
 }

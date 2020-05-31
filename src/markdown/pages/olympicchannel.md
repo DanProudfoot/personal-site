@@ -5,6 +5,7 @@ date: '2020-05-03'
 title: 'Mind on Olympic Channel'
 link: ''
 featuredImage: '../../images/work/ioc.png'
+active: true
 builtBy: 'at Kerve'
 stack:
     - Gatsby

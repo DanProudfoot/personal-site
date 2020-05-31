@@ -6,24 +6,25 @@ import MDXContent from '../components/MDXContent/MDXContent';
 import Layout, { Grid, GridArea } from '../components/Layout/Layout';
 import TimeOfDay from '../components/TimeOfDay/TimeOfDay';
 
+import style from '../styles/pages/index.module.css';
+
 export default function Index({ data, location }) {
 	const { introContent } = data;
 
 	return (
-		<Layout location={location}>
+		<Layout location={location} mainClassName={style.main}>
 			<SEO title="Home"></SEO>
 
-			<Grid>
+			<Grid className={style.grid}>
 				<GridArea
 					style={{
-						gridColumn: '2 / span 3',
-						gridRow: '2'
+						gridArea: 'header'
 					}}
 				>
 					<TimeOfDay></TimeOfDay>
 				</GridArea>
 
-				<GridArea style={{ gridColumn: '3 / span 3', gridRow: '3' }}>
+				<GridArea style={{ gridArea: 'content' }}>
 					<MDXContent theme="home">{introContent.body}</MDXContent>
 				</GridArea>
 			</Grid>

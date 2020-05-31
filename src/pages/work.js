@@ -5,22 +5,25 @@ import SEO from '../components/seo';
 import Layout, { Grid, GridArea } from '../components/Layout/Layout';
 import MDXContent from '../components/MDXContent/MDXContent';
 import Box from '../components/Box/Box';
+import { useTheme } from '../hooks';
 
 export default function Work({ location, data }) {
-	console.log(data);
+	useTheme('--color-secondary');
+
 	return (
-		<Layout location={location} colorTheme="--color-secondary">
+		<Layout location={location}>
 			<SEO title="Wot I made"></SEO>
 
-			<Grid>
-				{data.works.edges.map(({ node }) => (
+			{data.works.edges.map(({ node }) => (
+				<Grid>
 					<GridArea>
 						<Box>
-							<MDXContent>{node.body}</MDXContent>
+							{node.frontmatter.title}
+							{/* <MDXContent>{node.body}</MDXContent> */}
 						</Box>
 					</GridArea>
-				))}
-			</Grid>
+				</Grid>
+			))}
 		</Layout>
 	);
 }
@@ -29,7 +32,9 @@ export const pageQuery = graphql`
 	query {
 		works: allMdx(
 			sort: { order: DESC, fields: [frontmatter___date] }
-			filter: { frontmatter: { type: { eq: "work" } } }
+			filter: {
+				frontmatter: { type: { eq: "work" }, active: { eq: true } }
+			}
 		) {
 			edges {
 				node {

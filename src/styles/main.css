@@ -16,6 +16,12 @@
 	--color-white: #fff;
 
 	--color-theme: #7e56f2;
+
+	--space: 24px;
+
+	@media (--viewport-tablet) {
+		--space: 32px;
+	}
 }
 
 html {

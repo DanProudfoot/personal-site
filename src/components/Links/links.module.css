@@ -1,19 +1,24 @@
 .group {
-	margin-top: 42px;
-	margin-left: 54px;
+	grid-area: links;
 
 	padding: 0px 10px;
 
 	pointer-events: all;
 
-	display: flex;
-	align-items: stretch;
-	border-radius: 30px;
+	display: grid;
+	gap: var(--space);
+	grid-auto-columns: min-content;
+	grid-template-rows: 1fr;
+
+	grid-auto-flow: column;
+
+	border-radius: 20px;
 	backdrop-filter: blur(10px);
 
 	width: max-content;
 
 	color: var(--color-theme);
+	transition: color 0.2s ease-out;
 }
 
 .link {
@@ -28,17 +33,13 @@
 	display: flex;
 	align-items: center;
 
-	& + & {
-		margin-left: 28px;
+	padding: 10px;
+}
+
+.external {
+	@media (width < 768px) {
+		display: none;
 	}
-}
-
-.padTop {
-	padding: 12px 9px;
-}
-
-.padAll {
-	padding: 12px;
 }
 
 .active {
@@ -46,7 +47,12 @@
 }
 
 .icon {
-	width: 48px;
-	height: 48px;
+	width: 32px;
+	height: 32px;
 	display: block;
+
+	@media (--viewport-tablet) {
+		width: 48px;
+		height: 48px;
+	}
 }

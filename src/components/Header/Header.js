@@ -7,7 +7,7 @@ import {
 	useSpring
 } from 'framer-motion';
 import clsx from 'clsx';
-import { useMeasure, useWindowSize } from 'react-use';
+import { useMeasure, useWindowSize, useMedia } from 'react-use';
 
 import Links from '../Links/Links';
 
@@ -16,7 +16,7 @@ import style from './header.module.css';
 const MotionLink = motion.custom(Link);
 
 export default function Header({ location }) {
-	const isWork = location.pathname.includes('work');
+	// const isWork = location.pathname.includes('work');
 
 	const [firstRef, { height: firstHeight }] = useMeasure();
 	const [surnameRef, { height: surnameHeight }] = useMeasure();
@@ -47,12 +47,13 @@ export default function Header({ location }) {
 		stiffness: 120
 	});
 
+	const media = useMedia('(min-width: 768px)');
+
 	return (
 		<header className={clsx(style.header)}>
-			<Links></Links>
+			<Links location={location}></Links>
 			<motion.h1
-				animate
-				className={clsx(style.h1)}
+				className={clsx(style.title)}
 				transition={{
 					type: 'spring',
 					damping: 20,
@@ -60,36 +61,46 @@ export default function Header({ location }) {
 					stiffness: 20
 				}}
 			>
-				<MotionLink
-					transition={{
-						type: 'spring',
-						damping: 14,
-						mass: 1,
-						stiffness: 120,
-						delay: 0.3
-					}}
-					style={{ y: firstSpring }}
-					ref={firstRef}
-					to="/"
-					className={style.link}
-				>
-					Dan
-				</MotionLink>
-				<MotionLink
-					transition={{
-						type: 'spring',
-						damping: 14,
-						mass: 1,
-						stiffness: 120,
-						delay: 0.3
-					}}
-					to="/"
-					className={style.link}
-					ref={surnameRef}
-					style={{ y: surnameSpring }}
-				>
-					Proudfoot
-				</MotionLink>
+				{media ? (
+					<>
+						<MotionLink
+							transition={{
+								type: 'spring',
+								damping: 14,
+								mass: 1,
+								stiffness: 120,
+								delay: 0.3
+							}}
+							style={{ y: firstSpring }}
+							ref={firstRef}
+							to="/"
+							className={style.link}
+						>
+							Dan
+						</MotionLink>
+						<MotionLink
+							transition={{
+								type: 'spring',
+								damping: 14,
+								mass: 1,
+								stiffness: 120,
+								delay: 0.3
+							}}
+							to="/"
+							className={style.link}
+							ref={surnameRef}
+							style={{ y: surnameSpring }}
+						>
+							Proudfoot
+						</MotionLink>
+					</>
+				) : (
+					<>
+						<Link to="/" className={style.link}>
+							Dan Proudfoot
+						</Link>
+					</>
+				)}
 			</motion.h1>
 		</header>
 	);

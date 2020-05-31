@@ -7,29 +7,55 @@
 	pointer-events: none;
 
 	z-index: 10;
+
+	display: grid;
+	grid-template-rows: var(--space) max-content 1fr var(--space);
+	grid-template-columns: var(--space) 1fr max-content var(--space);
+	grid-template-areas:
+		'. . . .'
+		'. links links .'
+		'. . title .'
+		'. . . .';
+
+	@media (--viewport-tablet) {
+		grid-template-areas:
+			'. . . .'
+			'. links title .'
+			'. . title .'
+			'. . . .';
+	}
 }
 
-.h1 {
+.title {
+	grid-area: title;
+
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
-	font-size: 12vh;
+	font-size: 9vh;
 	text-transform: uppercase;
 	font-weight: var(--fw-bold);
 	line-height: 0.775;
 
+	white-space: nowrap;
+
 	color: var(--color-theme);
 
-	position: absolute;
-	padding: 0 4rem 0;
+	padding-right: 0.1em;
 
 	pointer-events: all;
 
-	display: flex;
-	flex-direction: column-reverse;
-	align-items: flex-start;
-
 	right: 0;
 	top: 32px;
+
+	transition: color 0.5s ease-in-out;
+
+	@media (--viewport-tablet) {
+		font-size: 12vh;
+
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
 }
 
 .link {

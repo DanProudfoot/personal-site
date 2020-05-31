@@ -5,6 +5,7 @@ date: '2020-05-03'
 title: 'Haagen-Dazs Now'
 link: ''
 featuredImage: '../../images/gatsby-icon.png'
+active: true
 builtBy: 'at Kerve'
 stack:
     - Facebook chatbots

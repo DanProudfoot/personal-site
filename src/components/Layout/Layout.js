@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 
 import style from './layout.module.css';
 import '../../styles/main.css';
+import { useTheme } from '../../hooks';
 
-export default function Layout({
-	children,
-	location,
-	colorTheme = '--color-main'
-}) {
+export default function Layout({ children, mainClassName, location }) {
+	const theme = useTheme();
+
 	return (
 		<motion.div
 			key={location.key}
@@ -19,20 +18,29 @@ export default function Layout({
 		>
 			<style>
 				{`:root {
-					--color-theme: var(${colorTheme})
+					--color-theme: var(${theme})
 				}`}
 			</style>
 			<div className={style.layout}>
-				<main className={clsx(style.main)}>{children}</main>
+				<main className={clsx(style.main, mainClassName)}>
+					{children}
+				</main>
 			</div>
 		</motion.div>
 	);
 }
 
-export function Grid({ children, columns, rows, style: cssStyles, ...props }) {
+export function Grid({
+	children,
+	columns,
+	rows,
+	style: cssStyles,
+	className,
+	...props
+}) {
 	return (
 		<div
-			className={clsx(style.grid)}
+			className={clsx(style.grid, className)}
 			style={{
 				gridTemplateColumns: columns,
 				gridTemplateRows: rows,

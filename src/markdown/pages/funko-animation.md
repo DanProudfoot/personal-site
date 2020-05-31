@@ -5,6 +5,7 @@ date: '2020-05-03'
 title: 'Funko Animation Studios'
 link: 'https://funkoanimationstudios.tv'
 featuredImage: '../../images/work/funko.png'
+active: true
 builtBy: 'by myself'
 stack:
     - Gatsby

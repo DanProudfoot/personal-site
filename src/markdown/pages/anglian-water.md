@@ -3,6 +3,7 @@ type: 'work'
 path: '/work/anglian-water'
 date: '2020-05-03'
 title: 'Anglian Water'
+active: true
 link: ''
 featuredImage: '../../images/work/anglian.jpg'
 builtBy: 'at Kerve'

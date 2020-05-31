@@ -1,0 +1,23 @@
+.main {
+	display: flex;
+}
+
+.grid {
+	grid-template-rows: 1fr repeat(2, auto) 1fr;
+
+	grid-template-areas:
+		'.'
+		'header'
+		'content'
+		'.';
+
+	@media (--viewport-tablet) {
+		grid-template-rows: 1fr repeat(2, auto) 1fr;
+
+		grid-template-areas:
+			'. . . . . .'
+			'. header header header . .'
+			'. . content content content .'
+			'. . . . . .';
+	}
+}
