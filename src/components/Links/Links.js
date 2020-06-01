@@ -43,7 +43,7 @@ export default function Links() {
 			</ExternalLink>
 
 			<LinkLink to="/">Home</LinkLink>
-			<LinkLink to="/work">Work</LinkLink>
+			{/* <LinkLink to="/work">Work</LinkLink> */}
 		</motion.div>
 	);
 }
