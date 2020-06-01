@@ -9,16 +9,17 @@
 const React = require('react');
 const { AnimateSharedLayout, AnimatePresence } = require('framer-motion');
 const Header = require('./src/components/Header/Header').default;
+const Providers = require('./src/providers').default;
 
 exports.wrapPageElement = ({ element, props }) => {
 	// props provide same data to Layout as Page element will get
 	// including location, data, etc - you don't need to pass it
 	return (
-		<>
+		<Providers>
 			<Header {...props}></Header>
-			<AnimateSharedLayout type="crossfade" transition={{ duration: 10 }}>
-				<AnimatePresence>{element}</AnimatePresence>
+			<AnimateSharedLayout type="crossfade">
+				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
 			</AnimateSharedLayout>
-		</>
+		</Providers>
 	);
 };
