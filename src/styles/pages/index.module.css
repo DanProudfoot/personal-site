@@ -11,9 +11,17 @@
 		'content'
 		'.';
 
-	@media (--viewport-tablet) {
+	@media (--v-md) {
 		grid-template-rows: 1fr repeat(2, auto) 1fr;
 
+		grid-template-areas:
+			'. . . . . .'
+			'header header header header header .'
+			'. content content content content content'
+			'. . . . . .';
+	}
+
+	@media (--v-xl) {
 		grid-template-areas:
 			'. . . . . .'
 			'. header header header . .'

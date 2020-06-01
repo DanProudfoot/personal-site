@@ -1,6 +1,7 @@
 .group {
 	grid-area: links;
 
+	margin-left: -20px;
 	padding: 0px 10px;
 
 	pointer-events: all;
@@ -51,7 +52,7 @@
 	height: 32px;
 	display: block;
 
-	@media (--viewport-tablet) {
+	@media (--v-md) {
 		width: 48px;
 		height: 48px;
 	}

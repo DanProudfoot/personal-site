@@ -1,9 +1,10 @@
 @import 'normalize.css';
 @import './preflight.css';
 
-@custom-media --viewport-big-phone (width >= 480px);
-@custom-media --viewport-tablet (width >= 768px);
-@custom-media --viewport-desktop (width >= 1024px);
+@custom-media --v-bl (width >= 480px);
+@custom-media --v-md (width >= 768px);
+@custom-media --v-lg (width >= 1024px);
+@custom-media --v-xl (width >= 1200px);
 
 :root {
 	--font-josefin: 'Josefin Sans', sans-serif;
@@ -19,7 +20,7 @@
 
 	--space: 24px;
 
-	@media (--viewport-tablet) {
+	@media (--v-md) {
 		--space: 32px;
 	}
 }

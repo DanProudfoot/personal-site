@@ -13,7 +13,7 @@ const variants = {
 			x: '0%',
 			opacity: 1,
 			transition: {
-				duration: 2
+				duration: 1.2
 			}
 		}
 	},
@@ -26,8 +26,8 @@ const variants = {
 			x: '0%',
 			opacity: 1,
 			transition: {
-				duration: 1.8,
-				delay: 1.5
+				duration: 1,
+				delay: 0.6
 			}
 		}
 	}

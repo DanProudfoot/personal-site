@@ -5,10 +5,13 @@ import SEO from '../components/seo';
 import MDXContent from '../components/MDXContent/MDXContent';
 import Layout, { Grid, GridArea } from '../components/Layout/Layout';
 import TimeOfDay from '../components/TimeOfDay/TimeOfDay';
+import { useTheme } from '../hooks';
 
 import style from '../styles/pages/index.module.css';
 
 export default function Index({ data, location }) {
+	useTheme('--color-main');
+
 	const { introContent } = data;
 
 	return (
