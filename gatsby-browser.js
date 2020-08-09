@@ -9,7 +9,8 @@
 
 const React = require('react');
 const { AnimateSharedLayout, AnimatePresence } = require('framer-motion');
-const Header = require('./src/components/Header/Header').default;
+
+const { Header } = require('./src/components/organisms');
 const Providers = require('./src/providers').default;
 
 exports.wrapPageElement = ({ element, props }) => {

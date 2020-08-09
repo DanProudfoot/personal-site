@@ -8,7 +8,8 @@
 
 const React = require('react');
 const { AnimateSharedLayout, AnimatePresence } = require('framer-motion');
-const Header = require('./src/components/Header/Header').default;
+
+const { Header } = require('./src/components/organisms');
 
 exports.wrapPageElement = ({ element, props }) => {
 	// props provide same data to Layout as Page element will get

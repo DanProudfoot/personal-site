@@ -3,10 +3,9 @@ import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 import { motion } from 'framer-motion';
 
-import Box from '../Box/Box';
+import { Box, BackgroundImage } from '../index';
 
 import style from './postlink.module.css';
-import BackgroundImage from '../BackgroundImage/BackgroundImage';
 
 const variants = {
 	box: {
@@ -35,7 +34,7 @@ const variants = {
 	}
 };
 
-export default function PostLink({ post, index }) {
+export function PostLink({ post, index }) {
 	return (
 		<Link
 			className={style.link}
@@ -61,7 +60,7 @@ export default function PostLink({ post, index }) {
 					{post.frontmatter.title}
 				</motion.div>
 
-				<BackgroundImage
+				{/* <BackgroundImage
 					imageProps={{
 						fluid:
 							post.frontmatter.featuredImage.childImageSharp.fluid
@@ -69,7 +68,7 @@ export default function PostLink({ post, index }) {
 					variants={variants.img}
 					initial="initial"
 					layoutId={`image-${post.id}`}
-				></BackgroundImage>
+				></BackgroundImage> */}
 			</Box>
 		</Link>
 	);

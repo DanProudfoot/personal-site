@@ -4,23 +4,15 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
 import style from './layout.module.css';
-import '../../styles/main.css';
-import { useTheme } from '../../hooks';
+import 'src/styles/main.css';
 
-export default function Layout({ children, mainClassName, location }) {
-	const theme = useTheme();
-
+export function Layout({ children, mainClassName, location }) {
 	return (
 		<motion.div
 			key={location.key}
 			className={style.layoutContainer}
 			exit={{ position: 'absolute', zIndex: 10, opacity: 0 }}
 		>
-			<style>
-				{`:root {
-					--color-theme: var(${theme})
-				}`}
-			</style>
 			<div className={style.layout}>
 				<main className={clsx(style.main, mainClassName)}>
 					{children}

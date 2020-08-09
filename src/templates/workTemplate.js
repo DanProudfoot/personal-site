@@ -1,10 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout, { Grid, GridArea } from '../components/Layout/Layout';
-import Box from '../components/Box/Box';
-import MDXContent from '../components/MDXContent/MDXContent';
-import BackgroundImage from '../components/BackgroundImage/BackgroundImage';
+import { Layout, Grid, GridArea } from 'src/components/molecules';
+import { Box, MDXContent, BackgroundImage } from 'src/components/atoms';
 
 import style from './work-template.module.css';
 

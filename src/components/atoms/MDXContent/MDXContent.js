@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import style from './mdx.module.css';
 
-export default function MDXContent({ children, theme = 'default' }) {
+export function MDXContent({ children, theme = 'default' }) {
 	return (
 		<div className={clsx(style.mdx, style[theme])}>
 			<MDXRenderer>{children}</MDXRenderer>

@@ -3,15 +3,15 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
 import { Link } from 'gatsby';
 
-import { useCSSVariable, useTheme } from '../../hooks';
+import { useCSSVariable, useTheme } from 'src/hooks';
 
-import Github from '../../images/github.svg';
-import Email from '../../images/at-sign.svg';
-import Twitter from '../../images/twitter.svg';
+import Github from 'src/images/github.svg';
+import Email from 'src/images/at-sign.svg';
+import Twitter from 'src/images/twitter.svg';
 
 import style from './links.module.css';
 
-export default function Links() {
+export function Links() {
 	const theme = useTheme();
 	const mainColor = useCSSVariable(theme);
 

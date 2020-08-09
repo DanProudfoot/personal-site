@@ -33,7 +33,7 @@ const variants = {
 	}
 };
 
-export default function TimeOfDay() {
+export function TimeOfDay() {
 	const time = useMemo(() => {
 		const date = new Date();
 		const hour = date.getHours();

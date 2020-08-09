@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import style from './background.module.css';
 
-export default function BackgroundImage({ imageProps, ...props }) {
+export function BackgroundImage({ imageProps, ...props }) {
 	return (
 		<motion.div className={style.bgi} {...props}>
 			<Image {...imageProps}></Image>

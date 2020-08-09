@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import style from './box.module.css';
 
-export default function Box({
+export function Box({
 	children,
 	className,
 	padding = '32',

@@ -9,13 +9,13 @@ import {
 import clsx from 'clsx';
 import { useMeasure, useWindowSize, useMedia } from 'react-use';
 
-import Links from '../Links/Links';
+import { Links } from 'src/components/molecules';
 
 import style from './header.module.css';
 
 const MotionLink = motion.custom(Link);
 
-export default function Header({ location }) {
+export function Header({ location }) {
 	// const isWork = location.pathname.includes('work');
 
 	const [firstRef, { height: firstHeight }] = useMeasure();
