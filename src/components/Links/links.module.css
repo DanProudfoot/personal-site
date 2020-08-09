@@ -2,7 +2,7 @@
 	grid-area: links;
 
 	margin-left: -20px;
-	padding: 0px 10px;
+	padding: 0px calc(var(--space) / 2);
 
 	pointer-events: all;
 
@@ -36,12 +36,12 @@
 
 	padding: 10px;
 }
-
+/*
 .external {
 	@media (width < 768px) {
 		display: none;
 	}
-}
+} */
 
 .active {
 	text-decoration: underline;

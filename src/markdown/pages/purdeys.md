@@ -4,7 +4,11 @@ path: '/work/purdeys-positivity'
 date: '2020-05-03'
 title: 'Purdeys Positivity'
 link: 'https://purdeys.com/positivity/'
-featuredImage: '../../images/work/purdeys.png'
+featuredImage: '../../images/work/purdeys/purdeys.png'
+gallery:
+    - '../../images/work/purdeys/1-home.png'
+    - '../../images/work/purdeys/3-results.png'
+    - '../../images/work/purdeys/4-tips.png'
 builtBy: 'at Kerve'
 stack:
     - Google Cloud Sentiment Analysis
@@ -12,7 +16,7 @@ stack:
     - Vanilla JS
 ---
 
-A weird one. Purdey's the energy drink wanted to know how positive your tweets are for reasons I can't quite remember.
+A weird one. Purdey's energy drink wanted to know how positive your tweets are for reasons I can't quite remember.
 
 I built a little node server that receives your Twitter username, looks up your last 100 tweets and runs them through Google Sentiment analysis. Another developer I work with built a normaliser that takes the sentiment score and returns a percentage.
 

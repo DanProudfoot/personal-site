@@ -13,8 +13,6 @@
 .main {
 	pointer-events: all;
 
-	min-height: 100vh;
-
 	padding-top: calc(var(--space) * 3);
 
 	@media (--v-md) {
@@ -23,6 +21,8 @@
 }
 
 .grid {
+	min-height: calc(100vh - var(--space) * 3);
+
 	max-width: 1440px;
 	width: 100%;
 
@@ -41,6 +41,8 @@
 	}
 
 	@media (--v-md) {
+		min-height: calc(100vh - var(--space) * 4);
+
 		grid-template-columns: repeat(6, 1fr);
 		padding-right: calc(var(--space) * 2 + 16vh);
 	}

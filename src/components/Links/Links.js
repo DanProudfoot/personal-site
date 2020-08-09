@@ -41,9 +41,6 @@ export default function Links() {
 			<ExternalLink to="mailto:dan@danproudfoot.co.uk">
 				<Email className={style.icon}></Email>
 			</ExternalLink>
-
-			<LinkLink to="/">Home</LinkLink>
-			<LinkLink to="/work">Work</LinkLink>
 		</motion.div>
 	);
 }
