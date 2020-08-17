@@ -1,56 +1,51 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Image from 'gatsby-image';
 import { motion } from 'framer-motion';
 
-import { Box, BackgroundImage } from '../index';
+import { BackgroundImage } from '../index';
 
 import style from './postlink.module.css';
 
 const variants = {
 	box: {
-		initial: {
-			scale: 1
-		},
-		hover: {
-			scale: 1.05
-		}
+		initial: {}
 	},
 	tag: {
+		initial: {
+			color: '#7e56f2'
+		},
 		hover: {
-			// fontSize: 28,
-			transition: {
-				duration: 0.2
-			}
+			// scale: 1.1
+			color: '#000'
 		}
 	},
 	img: {
 		initial: {
-			scale: 1.1
+			// opacity: 0
 		},
 		hover: {
-			scale: 1
+			// opacity: 1,
+			transition: {
+				duration: 0.5
+			}
 		}
 	}
 };
 
 export function PostLink({ post, index }) {
 	return (
-		<Link
-			className={style.link}
-			to={post.frontmatter.path}
-			style={{
-				gridColumnStart: index % 4 === 2 ? 2 : ''
-			}}
+		<motion.div
+			className={style.holder}
+			variants={variants.box}
+			initial="initial"
+			whileHover="hover"
 		>
-			<Box
-				className={style.box}
-				padding="24"
-				whileHover="hover"
-				variants={variants.box}
-				layoutId={`box-${post.id}`}
-				type="none"
-				fill
+			<Link
+				className={style.link}
+				to={post.frontmatter.path}
+				style={{
+					gridColumnStart: index % 4 === 2 ? 2 : ''
+				}}
 			>
 				<motion.div
 					layoutId={`title-${post.id}`}
@@ -60,7 +55,7 @@ export function PostLink({ post, index }) {
 					{post.frontmatter.title}
 				</motion.div>
 
-				{/* <BackgroundImage
+				<BackgroundImage
 					imageProps={{
 						fluid:
 							post.frontmatter.featuredImage.childImageSharp.fluid
@@ -68,8 +63,9 @@ export function PostLink({ post, index }) {
 					variants={variants.img}
 					initial="initial"
 					layoutId={`image-${post.id}`}
-				></BackgroundImage> */}
-			</Box>
-		</Link>
+					className={style.background}
+				></BackgroundImage>
+			</Link>
+		</motion.div>
 	);
 }

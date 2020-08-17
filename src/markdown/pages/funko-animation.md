@@ -4,7 +4,7 @@ path: '/work/funko-animation'
 date: '2020-05-03'
 title: 'Funko Animation Studios'
 link: 'https://funkoanimationstudios.tv'
-featuredImage: '../../images/work/funko.png'
+featuredImage: '../../images/work/funko/funko.png'
 active: true
 builtBy: 'by myself'
 stack:
@@ -20,4 +20,4 @@ A bit of casual nepotism got me the role as developer when the studio's previous
 
 What results is a small and snappy site that focuses its attention on the client's most important needs - Show off the studio's fun and whimsical nature, and offer a jobs board that the company was previously missing.
 
-The Gatsby underpinning allow more sections to be added quickly when I'm called on again.
+The Gatsby underpinning would have allowed more sections to be added - but Covid has caused the company to be shut down.

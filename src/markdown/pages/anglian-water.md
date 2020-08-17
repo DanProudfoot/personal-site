@@ -5,7 +5,7 @@ date: '2020-05-03'
 title: 'Anglian Water'
 active: true
 link: ''
-featuredImage: '../../images/work/anglian.jpg'
+featuredImage: '../../images/work/anglian/anglian.jpg'
 builtBy: 'at Kerve'
 stack:
     - Leap Motion

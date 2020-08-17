@@ -1,8 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import {
+	motion,
+	useViewportScroll,
+	useTransform,
+	useMotionTemplate
+} from 'framer-motion';
 
-import { Layout, Grid, GridArea } from 'src/components/molecules';
-import { Box, MDXContent, BackgroundImage } from 'src/components/atoms';
+import { SEO } from 'src/components/atoms';
+import { Layout } from 'src/components/molecules';
+import { MDXContent, BackgroundImage } from 'src/components/atoms';
 
 import style from './work-template.module.css';
 
@@ -10,39 +17,35 @@ export default function Template({ location, data }) {
 	const { mdx } = data;
 	const { frontmatter, body, id } = mdx;
 
+	const { scrollYProgress } = useViewportScroll();
+	const blurTransform = useTransform(scrollYProgress, (value) => value * 5);
+	const blur = useMotionTemplate`blur(${blurTransform}px)`;
+
 	return (
-		<Layout location={location}>
-			<Grid rows="auto 1fr 2fr">
-				<GridArea colStart="1" colEnd="span 2">
-					<Box layoutId={`title-${id}`} theme="blur" padding="24">
-						<h1 className={style.heading}>{frontmatter.title}</h1>
-					</Box>
-				</GridArea>
+		<>
+			<SEO title={frontmatter.title}></SEO>
 
-				<GridArea
-					colStart="1"
-					colEnd="span 2"
-					rowStart="2"
-					rowEnd="span 2"
-				>
-					<Box layoutId={`box-${id}`}>
-						<MDXContent>{body}</MDXContent>
-					</Box>
-				</GridArea>
+			<Layout location={location}>
+				<div className={style.contentSheet}>
+					<h1 className={style.heading}>{frontmatter.title}</h1>
+					<MDXContent>{body}</MDXContent>
+				</div>
+			</Layout>
 
-				<GridArea colStart="3" colEnd="span 3" rowEnd="span 2">
-					<Box layoutId={`image-${id}`} theme="none" fill>
-						<BackgroundImage
-							imageProps={{
-								fluid:
-									frontmatter.featuredImage.childImageSharp
-										.fluid
-							}}
-						></BackgroundImage>
-					</Box>
-				</GridArea>
-			</Grid>
-		</Layout>
+			<div className={style.backgroundContainer}>
+				<motion.div
+					className={style.bgOverlay}
+					style={{ backdropFilter: blur, opacity: scrollYProgress }}
+				></motion.div>
+				<BackgroundImage
+					imageProps={{
+						fluid: frontmatter.featuredImage.childImageSharp.fluid
+					}}
+					layoutId={`image-${id}`}
+					className={style.background}
+				></BackgroundImage>
+			</div>
+		</>
 	);
 }
 
@@ -59,7 +62,7 @@ export const pageQuery = graphql`
 				title
 				featuredImage {
 					childImageSharp {
-						fluid(maxWidth: 400, quality: 80) {
+						fluid(maxWidth: 1920, quality: 80) {
 							...GatsbyImageSharpFluid
 						}
 					}

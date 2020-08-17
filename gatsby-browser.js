@@ -20,7 +20,7 @@ exports.wrapPageElement = ({ element, props }) => {
 		<Providers>
 			<Header {...props}></Header>
 			<AnimateSharedLayout type="crossfade">
-				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+				<AnimatePresence>{element}</AnimatePresence>
 			</AnimateSharedLayout>
 		</Providers>
 	);

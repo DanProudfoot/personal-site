@@ -3,8 +3,6 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
 import { Link } from 'gatsby';
 
-import { useCSSVariable, useTheme } from 'src/hooks';
-
 import Github from 'src/images/github.svg';
 import Email from 'src/images/at-sign.svg';
 import Twitter from 'src/images/twitter.svg';
@@ -12,9 +10,6 @@ import Twitter from 'src/images/twitter.svg';
 import style from './links.module.css';
 
 export function Links() {
-	const theme = useTheme();
-	const mainColor = useCSSVariable(theme);
-
 	const { scrollY } = useViewportScroll();
 	const backgroundTransform = useTransform(
 		scrollY,
@@ -22,14 +17,11 @@ export function Links() {
 		['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)']
 	);
 
-	const colorTransform = useTransform(scrollY, [0, 60], [mainColor, '#fff']);
-
 	return (
 		<motion.div
 			className={style.group}
 			style={{
-				backgroundColor: backgroundTransform,
-				color: colorTransform
+				backgroundColor: backgroundTransform
 			}}
 		>
 			<ExternalLink to="https://twitter.com/DanProudfeet">

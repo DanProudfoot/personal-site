@@ -16,8 +16,9 @@ import style from './header.module.css';
 const MotionLink = motion.custom(Link);
 
 export function Header({ location }) {
-	// const isWork = location.pathname.includes('work');
+	const isWork = location.pathname.includes('work');
 
+	const media = useMedia('(min-width: 768px)');
 	const [firstRef, { height: firstHeight }] = useMeasure();
 	const [surnameRef, { height: surnameHeight }] = useMeasure();
 	const { height } = useWindowSize();
@@ -47,20 +48,10 @@ export function Header({ location }) {
 		stiffness: 120
 	});
 
-	const media = useMedia('(min-width: 768px)');
-
 	return (
 		<header className={clsx(style.header)}>
 			<Links location={location}></Links>
-			<motion.h1
-				className={clsx(style.title)}
-				transition={{
-					type: 'spring',
-					damping: 20,
-					mass: 1,
-					stiffness: 20
-				}}
-			>
+			<h1 className={clsx(style.title, { [style.workMode]: isWork })}>
 				{media ? (
 					<>
 						<MotionLink
@@ -101,7 +92,7 @@ export function Header({ location }) {
 						</Link>
 					</>
 				)}
-			</motion.h1>
+			</h1>
 		</header>
 	);
 }

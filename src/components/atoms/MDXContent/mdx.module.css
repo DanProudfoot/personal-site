@@ -40,7 +40,7 @@
 }
 
 .default {
-	color: #fff;
+	color: #000;
 
 	p + p {
 		margin-top: 1em;

@@ -4,7 +4,7 @@ path: '/work/olympicchannel'
 date: '2020-05-03'
 title: 'Mind on Olympic Channel'
 link: ''
-featuredImage: '../../images/work/ioc.png'
+featuredImage: '../../images/work/ioc/ioc.png'
 active: true
 builtBy: 'at Kerve'
 stack:

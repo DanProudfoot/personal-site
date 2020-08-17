@@ -4,7 +4,7 @@ path: '/work/shiseido'
 date: '2020-05-03'
 title: 'NARS / Laura Mercier'
 link: ''
-featuredImage: '../../images/gatsby-icon.png'
+featuredImage: '../../images/icon.png'
 active: true
 builtBy: 'at Kerve'
 stack:
