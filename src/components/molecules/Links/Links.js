@@ -3,9 +3,9 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
 import { Link } from 'gatsby';
 
-import Github from 'src/images/github.svg';
-import Email from 'src/images/at-sign.svg';
-import Twitter from 'src/images/twitter.svg';
+import Github from 'src/media/images/github.svg';
+import Email from 'src/media/images/at-sign.svg';
+import Twitter from 'src/media/images/twitter.svg';
 
 import style from './links.module.css';
 
