@@ -28,6 +28,15 @@ export default function Template({ location, data }) {
 			<Layout location={location}>
 				<div className={style.contentSheet}>
 					<h1 className={style.heading}>{frontmatter.title}</h1>
+					<div>
+						{frontmatter.link && <div>{frontmatter.link}</div>}
+						<div>Built {frontmatter.builtBy}</div>
+					</div>
+					<ul>
+						{frontmatter.stack.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
 					<MDXContent>{body}</MDXContent>
 				</div>
 			</Layout>
@@ -56,10 +65,10 @@ export const pageQuery = graphql`
 			body
 			frontmatter {
 				date(formatString: "DD MMMM, YYYY")
-				link
-				path
-				stack
 				title
+				link
+				builtBy
+				stack
 				featuredImage {
 					childImageSharp {
 						fluid(maxWidth: 1920, quality: 80) {
