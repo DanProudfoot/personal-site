@@ -1,34 +1,11 @@
 .header {
-	position: fixed;
-	height: 100vh;
-	width: 100vw;
-	top: 0;
-
-	pointer-events: none;
+	position: relative;
+	grid-area: title;
 
 	z-index: 10;
-
-	display: grid;
-	grid-template-rows: var(--space) max-content 1fr var(--space);
-	grid-template-columns: var(--space) 1fr max-content var(--space);
-	grid-template-areas:
-		'. . . .'
-		'. links links .'
-		'. . title .'
-		'. . . .';
-
-	@media (--v-bl) {
-		grid-template-areas:
-			'. . . .'
-			'. links title .'
-			'. . title .'
-			'. . . .';
-	}
 }
 
 .title {
-	grid-area: title;
-
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
 	font-size: 9vh;
@@ -44,8 +21,8 @@
 
 	pointer-events: all;
 
-	right: 0;
-	top: 32px;
+	/* right: 0;
+	top: 32px; */
 
 	transition: color 0.5s ease-in-out;
 

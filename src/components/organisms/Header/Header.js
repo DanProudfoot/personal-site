@@ -9,8 +9,6 @@ import {
 import clsx from 'clsx';
 import { useMeasure, useWindowSize, useMedia } from 'react-use';
 
-import { Links } from 'src/components/molecules';
-
 import style from './header.module.css';
 
 const MotionLink = motion.custom(Link);
@@ -23,18 +21,14 @@ export function Header({ location }) {
 	const [surnameRef, { height: surnameHeight }] = useMeasure();
 	const { height } = useWindowSize();
 
-	const { scrollYProgress } = useViewportScroll();
+	const { scrollY, scrollYProgress } = useViewportScroll();
 
 	const firstY = useTransform(
 		scrollYProgress,
 		[0, 1],
-		[0, height - firstHeight - 64]
+		[0, height + firstHeight]
 	);
-	const surnameY = useTransform(
-		scrollYProgress,
-		[0, 1],
-		[0, height - surnameHeight - 64]
-	);
+	const surnameY = useTransform(scrollY, (value) => value);
 
 	const firstSpring = useSpring(firstY, {
 		damping: 50,
@@ -50,37 +44,22 @@ export function Header({ location }) {
 
 	return (
 		<header className={clsx(style.header)}>
-			<Links location={location}></Links>
 			<h1 className={clsx(style.title, { [style.workMode]: isWork })}>
 				{media ? (
 					<>
 						<MotionLink
-							transition={{
-								type: 'spring',
-								damping: 14,
-								mass: 1,
-								stiffness: 120,
-								delay: 0.3
-							}}
-							style={{ y: firstSpring }}
 							ref={firstRef}
 							to="/"
 							className={style.link}
+							// style={{ y: firstSpring }}
 						>
 							Dan
 						</MotionLink>
 						<MotionLink
-							transition={{
-								type: 'spring',
-								damping: 14,
-								mass: 1,
-								stiffness: 120,
-								delay: 0.3
-							}}
 							to="/"
 							className={style.link}
 							ref={surnameRef}
-							style={{ y: surnameSpring }}
+							// style={{ y: surnameSpring }}
 						>
 							Proudfoot
 						</MotionLink>

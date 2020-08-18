@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
-import { Link } from 'gatsby';
 
 import Github from 'src/media/images/github.svg';
 import Email from 'src/media/images/at-sign.svg';
@@ -16,43 +15,32 @@ export function Links() {
 		[0, 300],
 		['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)']
 	);
-
-	return (
-		<motion.div
-			className={style.group}
-			style={{
-				backgroundColor: backgroundTransform
-			}}
-		>
-			<ExternalLink to="https://twitter.com/DanProudfeet">
-				<Twitter className={style.icon}></Twitter>
-			</ExternalLink>
-			<ExternalLink to="https://github.com/DanProudfoot">
-				<Github className={style.icon}></Github>
-			</ExternalLink>
-			<ExternalLink to="mailto:dan@danproudfoot.co.uk">
-				<Email className={style.icon}></Email>
-			</ExternalLink>
-		</motion.div>
+	const colorTransform = useTransform(
+		scrollY,
+		[0, 300],
+		['rgba(0, 0, 0, 1)', 'rgba(255, 255, 255, 1)']
 	);
-}
 
-const MotionLink = motion.custom(Link);
-
-function LinkLink({ children, className, ...props }) {
 	return (
-		<MotionLink
-			className={clsx(style.link, style.regular, className)}
-			variants={{
-				hover: {},
-				tap: {}
-			}}
-			whileHover="hover"
-			whileTap="tap"
-			{...props}
-		>
-			{children}
-		</MotionLink>
+		<div className={style.links}>
+			<motion.div
+				className={style.group}
+				style={{
+					backgroundColor: backgroundTransform,
+					color: colorTransform
+				}}
+			>
+				<ExternalLink to="https://twitter.com/DanProudfeet">
+					<Twitter className={style.icon}></Twitter>
+				</ExternalLink>
+				<ExternalLink to="https://github.com/DanProudfoot">
+					<Github className={style.icon}></Github>
+				</ExternalLink>
+				<ExternalLink to="mailto:dan@danproudfoot.co.uk">
+					<Email className={style.icon}></Email>
+				</ExternalLink>
+			</motion.div>
+		</div>
 	);
 }
 
@@ -75,21 +63,3 @@ function ExternalLink({ to, children, className, ...props }) {
 		</motion.a>
 	);
 }
-
-// function HashLink({ to, children, className, ...props }) {
-// 	return (
-// 		<motion.a
-// 			className={clsx(style.link, style.padTop, className)}
-// 			href={to}
-// 			variants={{
-// 				hover: {},
-// 				tap: {}
-// 			}}
-// 			whileHover="hover"
-// 			whileTap="tap"
-// 			{...props}
-// 		>
-// 			{children}
-// 		</motion.a>
-// 	);
-// }

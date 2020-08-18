@@ -1,0 +1,25 @@
+.page {
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	top: 0;
+
+	pointer-events: none;
+
+	z-index: 10;
+
+	display: grid;
+	grid-template-rows: var(--space) 68px 1fr;
+	grid-template-columns: var(--space) 1fr 192px var(--space);
+	grid-template-areas:
+		'. . . .'
+		'. links links .'
+		'. content title .';
+
+	@media (--v-bl) {
+		grid-template-areas:
+			'. . . .'
+			'. links title .'
+			'. content title .';
+	}
+}

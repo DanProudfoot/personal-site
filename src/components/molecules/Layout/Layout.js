@@ -28,7 +28,6 @@ export function Layout({ children, mainClassName, location }) {
 			initial="initial"
 			animate="enter"
 			exit="exit"
-			// exit={{ position: 'absolute', zIndex: 10, opacity: 0 }}
 			variants={variants}
 		>
 			<main className={clsx(style.main, mainClassName)}>{children}</main>

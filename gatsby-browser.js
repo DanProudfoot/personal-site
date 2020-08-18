@@ -11,6 +11,7 @@ const React = require('react');
 const { AnimateSharedLayout, AnimatePresence } = require('framer-motion');
 
 const { Header } = require('./src/components/organisms');
+const { Page, Links } = require('./src/components/molecules');
 const Providers = require('./src/providers').default;
 
 exports.wrapPageElement = ({ element, props }) => {
@@ -18,9 +19,12 @@ exports.wrapPageElement = ({ element, props }) => {
 	// including location, data, etc - you don't need to pass it
 	return (
 		<Providers>
-			<Header {...props}></Header>
 			{/* <AnimateSharedLayout type="crossfade"> */}
-			<AnimatePresence>{element}</AnimatePresence>
+			<Page>
+				<Links></Links>
+				<Header {...props}></Header>
+				<AnimatePresence>{element}</AnimatePresence>
+			</Page>
 			{/* </AnimateSharedLayout> */}
 		</Providers>
 	);

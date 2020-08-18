@@ -32,12 +32,17 @@ export default function Template({ location, data }) {
 						{frontmatter.link && <div>{frontmatter.link}</div>}
 						<div>Built {frontmatter.builtBy}</div>
 					</div>
-					<ul>
-						{frontmatter.stack.map((item) => (
-							<li>{item}</li>
-						))}
-					</ul>
-					<MDXContent>{body}</MDXContent>
+					<div className={style.sidebar}>
+						Stack:
+						<ul>
+							{frontmatter.stack.map((item) => (
+								<li>{item}</li>
+							))}
+						</ul>
+					</div>
+					<div className={style.content}>
+						<MDXContent>{body}</MDXContent>
+					</div>
 				</div>
 			</Layout>
 

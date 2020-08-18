@@ -1,8 +1,13 @@
-.group {
+.links {
 	grid-area: links;
+	z-index: 10;
+	position: relative;
+}
 
-	margin-left: -20px;
-	padding: 0px calc(var(--space) / 2);
+.group {
+	position: fixed;
+	/* margin-left: -20px;
+	padding: 0px calc(var(--space) / 2); */
 
 	pointer-events: all;
 
@@ -13,7 +18,7 @@
 
 	grid-auto-flow: column;
 
-	border-radius: 20px;
+	border-radius: 1rem;
 	backdrop-filter: blur(10px);
 
 	width: max-content;
