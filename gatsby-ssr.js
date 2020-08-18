@@ -17,9 +17,9 @@ exports.wrapPageElement = ({ element, props }) => {
 	return (
 		<>
 			<Header {...props}></Header>
-			<AnimateSharedLayout type="crossfade" transition={{ duration: 10 }}>
-				<AnimatePresence>{element}</AnimatePresence>
-			</AnimateSharedLayout>
+			{/* <AnimateSharedLayout type="crossfade" transition={{ duration: 10 }}> */}
+			<AnimatePresence>{element}</AnimatePresence>
+			{/* </AnimateSharedLayout> */}
 		</>
 	);
 };

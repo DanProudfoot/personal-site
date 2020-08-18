@@ -19,9 +19,9 @@ exports.wrapPageElement = ({ element, props }) => {
 	return (
 		<Providers>
 			<Header {...props}></Header>
-			<AnimateSharedLayout type="crossfade">
-				<AnimatePresence>{element}</AnimatePresence>
-			</AnimateSharedLayout>
+			{/* <AnimateSharedLayout type="crossfade"> */}
+			<AnimatePresence>{element}</AnimatePresence>
+			{/* </AnimateSharedLayout> */}
 		</Providers>
 	);
 };

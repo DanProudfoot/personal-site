@@ -18,21 +18,23 @@ module.exports = {
 				background_color: `#fff`,
 				theme_color: `#7e56f2`,
 				display: `minimal-ui`,
-				icon: `src/images/icon.png` // This path is relative to the root of the site.
+				icon: `src/media/images/icon.png` // This path is relative to the root of the site.
 			}
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`
+				path: `${__dirname}/src/media/images`
 			}
 		},
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `markdown-pages`,
-				path: `${__dirname}/src/markdown`
+				path: `${__dirname}/src/content/live`
 			}
 		},
 		{
@@ -41,8 +43,7 @@ module.exports = {
 				extensions: [`.mdx`, `.md`]
 			}
 		},
-		`gatsby-plugin-sharp`,
-		`gatsby-transformer-sharp`,
+
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
