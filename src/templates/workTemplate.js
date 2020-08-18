@@ -9,7 +9,7 @@ import {
 
 import { SEO } from 'src/components/atoms';
 import { Layout } from 'src/components/molecules';
-import { MDXContent, BackgroundImage } from 'src/components/atoms';
+import { MDXContent, BackgroundImage, Type } from 'src/components/atoms';
 
 import style from './work-template.module.css';
 
@@ -38,7 +38,9 @@ export default function Template({ location, data }) {
 
 			<Layout location={location}>
 				<div className={style.contentSheet}>
-					<h1 className={style.heading}>{frontmatter.title}</h1>
+					<h1 className={style.heading}>
+						<Type>{frontmatter.title}</Type>
+					</h1>
 
 					{frontmatter.link && (
 						<a

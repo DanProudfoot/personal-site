@@ -32,18 +32,3 @@ exports.wrapPageElement = ({ element, props }) => {
 		</Providers>
 	);
 };
-
-exports.shouldUpdateScroll = ({
-	routerProps: { location },
-	getSavedScrollPosition
-}) => {
-	const currentPosition = getSavedScrollPosition(location);
-
-	console.log(currentPosition);
-
-	setTimeout(() => {
-		window.scrollTo(...(currentPosition || [0, 0]));
-	}, 2000);
-
-	return false;
-};

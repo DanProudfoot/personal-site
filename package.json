@@ -7,6 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
+    "capsize": "^1.1.0",
     "clsx": "^1.1.1",
     "eslint-plugin-react-app": "^6.2.2",
     "framer-motion": "^2.5.0",

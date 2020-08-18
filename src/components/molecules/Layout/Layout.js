@@ -18,7 +18,7 @@ const variants = {
 	exit: {
 		opacity: 0,
 		transition: {
-			// duration: 50
+			duration: 0.5
 		}
 	}
 };
