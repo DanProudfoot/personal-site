@@ -16,7 +16,10 @@ const variants = {
 		opacity: 1
 	}),
 	exit: {
-		opacity: 0
+		opacity: 0,
+		transition: {
+			// duration: 50
+		}
 	}
 };
 

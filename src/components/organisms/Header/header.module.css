@@ -15,7 +15,7 @@
 
 	white-space: nowrap;
 
-	color: var(--color-theme);
+	color: rgb(var(--color-main));
 
 	padding-right: 0.1em;
 

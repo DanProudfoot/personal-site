@@ -13,6 +13,17 @@ import { MDXContent, BackgroundImage } from 'src/components/atoms';
 
 import style from './work-template.module.css';
 
+const wrapLastWord = (text) => {
+	const split = text.split(' ');
+	const pop = split.pop();
+
+	return (
+		<>
+			{split.join(' ')} <span>{pop}</span>
+		</>
+	);
+};
+
 export default function Template({ location, data }) {
 	const { mdx } = data;
 	const { frontmatter, body, id } = mdx;
@@ -28,15 +39,28 @@ export default function Template({ location, data }) {
 			<Layout location={location}>
 				<div className={style.contentSheet}>
 					<h1 className={style.heading}>{frontmatter.title}</h1>
-					<div>
-						{frontmatter.link && <div>{frontmatter.link}</div>}
-						<div>Built {frontmatter.builtBy}</div>
+
+					{frontmatter.link && (
+						<a
+							href={frontmatter.link}
+							alt=""
+							target="_blank"
+							rel="noopener noreferrer"
+							className={style.link}
+						>
+							View Site {'>'}
+						</a>
+					)}
+
+					<div className={style.builtBy}>
+						<div>Built {wrapLastWord(frontmatter.builtBy)}</div>
 					</div>
+
 					<div className={style.sidebar}>
-						Stack:
+						<h2 className={style.stack}>Stack:</h2>
 						<ul>
 							{frontmatter.stack.map((item) => (
-								<li>{item}</li>
+								<li key={item}>{item}</li>
 							))}
 						</ul>
 					</div>
@@ -44,21 +68,25 @@ export default function Template({ location, data }) {
 						<MDXContent>{body}</MDXContent>
 					</div>
 				</div>
-			</Layout>
 
-			<div className={style.backgroundContainer}>
-				<motion.div
-					className={style.bgOverlay}
-					style={{ backdropFilter: blur, opacity: scrollYProgress }}
-				></motion.div>
-				<BackgroundImage
-					imageProps={{
-						fluid: frontmatter.featuredImage.childImageSharp.fluid
-					}}
-					layoutId={`image-${id}`}
-					className={style.background}
-				></BackgroundImage>
-			</div>
+				<div className={style.backgroundContainer}>
+					<motion.div
+						className={style.bgOverlay}
+						style={{
+							backdropFilter: blur,
+							opacity: scrollYProgress
+						}}
+					></motion.div>
+					<BackgroundImage
+						imageProps={{
+							fluid:
+								frontmatter.featuredImage.childImageSharp.fluid
+						}}
+						layoutId={`image-${id}`}
+						className={style.background}
+					></BackgroundImage>
+				</div>
+			</Layout>
 		</>
 	);
 }

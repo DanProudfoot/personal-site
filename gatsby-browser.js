@@ -9,10 +9,13 @@
 
 const React = require('react');
 const { AnimateSharedLayout, AnimatePresence } = require('framer-motion');
+// const smoothscroll = require('smoothscroll-polyfill');
 
 const { Header } = require('./src/components/organisms');
 const { Page, Links } = require('./src/components/molecules');
 const Providers = require('./src/providers').default;
+
+// smoothscroll.polyfill();
 
 exports.wrapPageElement = ({ element, props }) => {
 	// props provide same data to Layout as Page element will get
@@ -23,9 +26,24 @@ exports.wrapPageElement = ({ element, props }) => {
 			<Page>
 				<Links></Links>
 				<Header {...props}></Header>
-				<AnimatePresence>{element}</AnimatePresence>
+				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
 			</Page>
 			{/* </AnimateSharedLayout> */}
 		</Providers>
 	);
+};
+
+exports.shouldUpdateScroll = ({
+	routerProps: { location },
+	getSavedScrollPosition
+}) => {
+	const currentPosition = getSavedScrollPosition(location);
+
+	console.log(currentPosition);
+
+	setTimeout(() => {
+		window.scrollTo(...(currentPosition || [0, 0]));
+	}, 2000);
+
+	return false;
 };

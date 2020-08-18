@@ -13,7 +13,7 @@
 
 .nametag {
 	color: #000;
-	color: var(--color-theme);
+	color: rgb(var(--color-main));
 	background: #fff;
 	mix-blend-mode: multiply;
 

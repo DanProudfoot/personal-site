@@ -17,7 +17,7 @@ export function Links() {
 	);
 	const colorTransform = useTransform(
 		scrollY,
-		[0, 300],
+		[0, 100],
 		['rgba(0, 0, 0, 1)', 'rgba(255, 255, 255, 1)']
 	);
 
