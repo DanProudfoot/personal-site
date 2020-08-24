@@ -1,11 +1,9 @@
 .grid {
-	grid-template-rows: 1fr repeat(2, auto) 1fr;
+	grid-template-rows: repeat(2, auto);
 
 	grid-template-areas:
-		'.'
 		'header'
-		'content'
-		'.';
+		'content';
 
 	@media (--v-md) {
 		grid-template-rows: 1fr repeat(2, auto) 1fr;

@@ -1,9 +1,13 @@
 .header {
-	position: fixed;
-	right: var(--space);
-	top: var(--space);
+	grid-area: title;
 
 	z-index: 10;
+
+	@media (--v-md) {
+		position: fixed;
+		right: var(--space);
+		top: var(--space);
+	}
 }
 
 .title {
@@ -16,7 +20,7 @@
 
 	white-space: nowrap;
 
-	color: rgb(var(--color-main));
+	color: rgb(var(--theme-primary));
 
 	padding-right: 0.1em;
 

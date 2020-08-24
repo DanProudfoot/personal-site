@@ -1,5 +1,5 @@
-import { ThemeContext } from '../contexts/index';
-import { useContext, useEffect } from 'react';
+import { LocationContext } from '../contexts/index';
+import { useContext } from 'react';
 
 export function useCSSVariable(variable = '--color-main', key) {
 	return getComputedStyle(document.documentElement)
@@ -7,12 +7,8 @@ export function useCSSVariable(variable = '--color-main', key) {
 		.trim();
 }
 
-export function useTheme(update) {
-	const { theme, setTheme } = useContext(ThemeContext);
-
-	useEffect(() => {
-		setTheme(update);
-	}, [update, setTheme]);
-
-	return theme;
+export function useLocation() {
+	return useContext(LocationContext);
 }
+
+export * from './useTheme';

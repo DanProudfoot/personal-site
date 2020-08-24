@@ -9,7 +9,7 @@ import {
 } from 'framer-motion';
 
 import { SEO } from 'src/components/atoms';
-import { Layout } from 'src/components/molecules';
+import { Main, Section } from 'src/components/molecules';
 import { MDXContent, BackgroundImage, Type } from 'src/components/atoms';
 
 import style from './work-template.module.css';
@@ -37,7 +37,7 @@ const wrapLastWord = (text) => {
 	);
 };
 
-export default function Template({ location, data }) {
+export default function Template({ data }) {
 	const { mdx } = data;
 	const { frontmatter, body, id } = mdx;
 
@@ -50,29 +50,31 @@ export default function Template({ location, data }) {
 	const color = useMotionTemplate`rgba(0,0,0, ${colorTransform})`;
 
 	const titleTransformY = useTransform(scrollY, [0, 200], ['-30vh', '0vh']);
-	const titleScale = useTransform(scrollY, [0, 200], [1.5, 1]);
+	const titleScale = useTransform(scrollY, [0, 200], [1, 0.75]);
 
 	const titleSpringScale = useSpring(titleScale, { damping: 30, mass: 1 });
 
 	return (
 		<>
 			<SEO title={frontmatter.title}></SEO>
+			<Main>
+				<div className={style.headingContainer}>
+					<motion.h2
+						className={style.heading}
+						style={{
+							// left: titlePosition,
+							// x: titleTransformX,
+							y: titleTransformY,
+							scale: titleSpringScale
+						}}
+					>
+						{frontmatter.title}
+					</motion.h2>
+				</div>
+			</Main>
 
-			<Layout location={location}>
+			<Section>
 				<div className={style.contentArea}>
-					<div className={style.headingContainer}>
-						<motion.h2
-							className={style.heading}
-							style={{
-								// left: titlePosition,
-								// x: titleTransformX,
-								y: titleTransformY,
-								scale: titleSpringScale
-							}}
-						>
-							{frontmatter.title}
-						</motion.h2>
-					</div>
 					<motion.div
 						className={style.contentSheet}
 						initial="initial"
@@ -128,7 +130,7 @@ export default function Template({ location, data }) {
 						className={style.background}
 					></BackgroundImage>
 				</div>
-			</Layout>
+			</Section>
 		</>
 	);
 }

@@ -4,12 +4,10 @@ import clsx from 'clsx';
 
 import style from './header.module.css';
 
-export function Header({ location }) {
-	const isWork = location.pathname.includes('work');
-
+export function Header() {
 	return (
 		<header className={clsx(style.header)}>
-			<h1 className={clsx(style.title, { [style.workMode]: isWork })}>
+			<h1 className={clsx(style.title)}>
 				<Link to="/" className={style.link}>
 					Dan Proudfoot
 				</Link>

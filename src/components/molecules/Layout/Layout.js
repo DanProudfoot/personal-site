@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+
+import { useLocation } from 'src/hooks';
 
 import style from './layout.module.css';
 import 'src/styles/main.css';
@@ -23,18 +24,37 @@ const variants = {
 	}
 };
 
-export function Layout({ children, mainClassName, location }) {
+export function Main({ children, className }) {
+	const location = useLocation();
+
 	return (
-		<motion.div
+		<motion.main
 			key={location.key}
-			className={style.layoutContainer}
+			className={clsx(style.main, className)}
 			initial="initial"
 			animate="enter"
 			exit="exit"
 			variants={variants}
 		>
-			<main className={clsx(style.main, mainClassName)}>{children}</main>
-		</motion.div>
+			{children}
+		</motion.main>
+	);
+}
+
+export function Section({ children, className }) {
+	const location = useLocation();
+
+	return (
+		<motion.section
+			key={location.key}
+			className={clsx(style.section, className)}
+			initial="initial"
+			animate="enter"
+			exit="exit"
+			variants={variants}
+		>
+			{children}
+		</motion.section>
 	);
 }
 
@@ -81,7 +101,3 @@ export function GridArea({
 		</div>
 	);
 }
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
-};

@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { ThemeContext } from '../contexts/index';
+import { LocationContext } from '../contexts/index';
 
-export default function Providers({ children }) {
-	const [theme, setTheme] = useState('--color-main');
-
+export default function Providers({ children, location }) {
 	return (
-		<ThemeContext.Provider value={{ theme, setTheme }}>
+		<LocationContext.Provider value={location}>
 			{children}
-		</ThemeContext.Provider>
+		</LocationContext.Provider>
 	);
 }

@@ -2,19 +2,23 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { SEO } from 'src/components/atoms';
-import { Layout } from 'src/components/molecules';
+import { Main, Section } from 'src/components/molecules';
 import { Hero, Posts } from 'src/components/organisms';
 
 export default function Index({ data, location }) {
 	const { introContent, works } = data;
 
 	return (
-		<Layout location={location}>
+		<>
 			<SEO title="Home"></SEO>
+			<Main>
+				<Hero content={introContent}></Hero>
+			</Main>
 
-			<Hero content={introContent}></Hero>
-			<Posts pages={works}></Posts>
-		</Layout>
+			<Section>
+				<Posts pages={works}></Posts>
+			</Section>
+		</>
 	);
 }
 

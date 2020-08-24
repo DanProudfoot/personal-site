@@ -10,19 +10,21 @@
 	padding-bottom: 0;
 
 	display: grid;
-	grid-template-rows: 68px 1fr;
+	grid-template-rows: 68px minmax(50vh, min-content) auto;
 	grid-template-columns: 1fr 8vh;
 	grid-template-areas:
-		'links links'
-		'content title';
+		'links title'
+		'main title'
+		'section section';
 
-	@media (--v-bl) {
+	@media (--v-md) {
 		grid-template-areas:
 			'links title'
-			'content title';
+			'main title'
+			'section title';
 	}
 
 	@media (--v-md) {
-		grid-template-rows: 84px 1fr;
+		grid-template-rows: 84px minmax(50vh, min-content) 1fr;
 	}
 }

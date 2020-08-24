@@ -15,10 +15,14 @@
 	--color-main: 126, 86, 242;
 	--color-secondary: 255, 92, 147;
 
-	--space: 24px;
+	--space: 1rem;
 
 	@media (--v-md) {
-		--space: 32px;
+		--space: 1.5rem;
+	}
+
+	@media (--v-lg) {
+		--space: 2rem;
 	}
 }
 

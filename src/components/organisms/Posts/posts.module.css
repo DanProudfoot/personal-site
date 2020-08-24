@@ -1,17 +1,29 @@
 .group {
 	display: grid;
 
-	grid-template-columns: 1fr 4fr;
-	grid-template-rows: auto 1fr 32px;
-	/* grid-auto-rows: minmax(200px, max-content); */
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		'heading'
+		'posts';
 
-	gap: 32px;
+	gap: var(--space);
+
+	padding-bottom: var(--space);
+
+	@media (--v-md) {
+		grid-template-columns: 1fr 4fr;
+		grid-template-rows: auto 1fr 32px;
+		grid-template-areas:
+			'. heading'
+			'posts posts';
+	}
 }
 
 .headingContainer {
 	display: flex;
 
-	grid-area: 1 / 2;
+	grid-area: heading;
 
 	font-size: 36px;
 }
@@ -21,8 +33,10 @@
 	line-height: 1;
 
 	font-weight: var(--fw-semibold);
+
+	font-size: clamp(28px, 5vw, 36px);
 }
 
 .posts {
-	grid-area: 2 / 1 / 2 / span 2;
+	grid-area: posts;
 }

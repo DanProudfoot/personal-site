@@ -1,14 +1,23 @@
-.layoutContainer {
-	grid-area: content;
+.main {
+	grid-area: main;
 
 	position: relative;
-
 	z-index: 1;
+
+	padding-right: calc(var(--space));
+	padding-top: calc(var(--space));
 }
 
-.main {
-	padding-right: calc(var(--space));
+.section {
+	grid-area: section;
+
 	position: relative;
+	z-index: 1;
+
+	@media (--v-md) {
+		padding-right: calc(var(--space));
+		padding-top: calc(var(--space));
+	}
 }
 
 .grid {
@@ -19,7 +28,7 @@
 	gap: var(--space);
 
 	& + & {
-		margin-top: var(--space);
+		margin-top: calc(var(--space) * 5);
 	}
 
 	@media (--v-md) {
