@@ -10,14 +10,14 @@ const fontMetrics = {
 	unitsPerEm: 1000
 };
 
-const styles = capsize({
-	fontMetrics,
-	capHeight: 44,
-	lineGap: 14
-});
-
-export function Type({ as = 'span', ...props }) {
+export function Type({ as = 'span', capHeight = 16, lineGap = 10, ...props }) {
 	const Tag = as;
+
+	const styles = capsize({
+		fontMetrics,
+		capHeight,
+		lineGap
+	});
 
 	return <Tag style={styles} {...props}></Tag>;
 }

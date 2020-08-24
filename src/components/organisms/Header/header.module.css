@@ -1,6 +1,7 @@
 .header {
-	position: relative;
-	grid-area: title;
+	position: fixed;
+	right: var(--space);
+	top: var(--space);
 
 	z-index: 10;
 }
@@ -27,7 +28,7 @@
 	transition: color 0.5s ease-in-out;
 
 	@media (--v-md) {
-		font-size: 12vh;
+		font-size: 10vh;
 
 		display: flex;
 		flex-direction: column-reverse;

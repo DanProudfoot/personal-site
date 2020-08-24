@@ -13,21 +13,21 @@ export function Links() {
 	const backgroundTransform = useTransform(
 		scrollY,
 		[0, 300],
-		['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)']
+		['rgba(255,255,255, 0)', 'rgba(255,255,255, 0.3)']
 	);
-	const colorTransform = useTransform(
-		scrollY,
-		[0, 100],
-		['rgba(0, 0, 0, 1)', 'rgba(255, 255, 255, 1)']
-	);
+	// const colorTransform = useTransform(
+	// 	scrollY,
+	// 	[0, 100],
+	// 	['rgba(0, 0, 0, 1)', 'rgba(255, 255, 255, 1)']
+	// );
 
 	return (
 		<div className={style.links}>
 			<motion.div
 				className={style.group}
 				style={{
-					backgroundColor: backgroundTransform,
-					color: colorTransform
+					backgroundColor: backgroundTransform
+					// color: colorTransform
 				}}
 			>
 				<ExternalLink to="https://twitter.com/DanProudfeet">

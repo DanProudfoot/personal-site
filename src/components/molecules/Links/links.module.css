@@ -6,8 +6,6 @@
 
 .group {
 	position: fixed;
-	/* margin-left: -20px;
-	padding: 0px calc(var(--space) / 2); */
 
 	pointer-events: all;
 
@@ -28,7 +26,6 @@
 	border-radius: 1rem;
 
 	backdrop-filter: blur(10px);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
 
 .link {
@@ -37,20 +34,15 @@
 
 	display: block;
 
-	box-shadow: 'inset 0px 4px 0px rgba(0, 0, 0, 0.0)';
 	border-radius: 0.75em;
 
 	display: flex;
 	align-items: center;
 
 	padding: 10px;
+
+	filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
 }
-/*
-.external {
-	@media (width < 768px) {
-		display: none;
-	}
-} */
 
 .active {
 	text-decoration: underline;

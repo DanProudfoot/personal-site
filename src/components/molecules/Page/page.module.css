@@ -4,22 +4,25 @@
 	width: 100%;
 	top: 0;
 
-	pointer-events: none;
-
 	z-index: 10;
 
+	padding: var(--space);
+	padding-bottom: 0;
+
 	display: grid;
-	grid-template-rows: var(--space) 68px 1fr;
-	grid-template-columns: var(--space) 1fr 192px var(--space);
+	grid-template-rows: 68px 1fr;
+	grid-template-columns: 1fr 8vh;
 	grid-template-areas:
-		'. . . .'
-		'. links links .'
-		'. content title .';
+		'links links'
+		'content title';
 
 	@media (--v-bl) {
 		grid-template-areas:
-			'. . . .'
-			'. links title .'
-			'. content title .';
+			'links title'
+			'content title';
+	}
+
+	@media (--v-md) {
+		grid-template-rows: 84px 1fr;
 	}
 }
