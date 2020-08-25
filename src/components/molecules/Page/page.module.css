@@ -16,6 +16,7 @@
 		'links title'
 		'main title'
 		'section section';
+	gap: var(--space);
 
 	@media (--v-md) {
 		grid-template-areas:

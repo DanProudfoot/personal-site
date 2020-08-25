@@ -4,8 +4,8 @@
 	position: relative;
 	z-index: 1;
 
-	padding-right: calc(var(--space));
-	padding-top: calc(var(--space));
+	/* padding-right: calc(var(--space));
+	padding-top: calc(var(--space)); */
 }
 
 .section {
@@ -15,12 +15,17 @@
 	z-index: 1;
 
 	@media (--v-md) {
-		padding-right: calc(var(--space));
-		padding-top: calc(var(--space));
+		/* padding-right: calc(var(--space)); */
+		/* padding-top: calc(var(--space)); */
 	}
 }
 
-.grid {
+.main + .section,
+.section + .section {
+	margin-top: var(--space);
+}
+
+/* .grid {
 	display: grid;
 	grid-template-columns: 1fr;
 
@@ -39,8 +44,8 @@
 	@media (width > 1800px) {
 		padding-right: var(--space);
 	}
-}
-
+} */
+/*
 .gridArea {
 	position: relative;
-}
+} */

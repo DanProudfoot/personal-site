@@ -41,15 +41,15 @@ export default function Template({ data }) {
 	const { mdx } = data;
 	const { frontmatter, body, id } = mdx;
 
-	const { scrollYProgress, scrollY } = useViewportScroll();
+	const { scrollY } = useViewportScroll();
 
-	const blurTransform = useTransform(scrollYProgress, [0, 1], [1, 10]);
-	const colorTransform = useTransform(scrollYProgress, (value) => value / 2);
+	const blurTransform = useTransform(scrollY, [0, 200], [5, 0]);
+	const colorTransform = useTransform(scrollY, [0, 200], [0, 0.8]);
 
 	const blur = useMotionTemplate`blur(${blurTransform}px)`;
 	const color = useMotionTemplate`rgba(0,0,0, ${colorTransform})`;
 
-	const titleTransformY = useTransform(scrollY, [0, 200], ['-30vh', '0vh']);
+	const titleTransformY = useTransform(scrollY, [0, 200], ['-25vh', '0vh']);
 	const titleScale = useTransform(scrollY, [0, 200], [1, 0.75]);
 
 	const titleSpringScale = useSpring(titleScale, { damping: 30, mass: 1 });
@@ -57,80 +57,78 @@ export default function Template({ data }) {
 	return (
 		<>
 			<SEO title={frontmatter.title}></SEO>
-			<Main>
-				<div className={style.headingContainer}>
-					<motion.h2
-						className={style.heading}
-						style={{
-							// left: titlePosition,
-							// x: titleTransformX,
-							y: titleTransformY,
-							scale: titleSpringScale
-						}}
-					>
-						{frontmatter.title}
-					</motion.h2>
-				</div>
+			<Main className={style.main}>
+				<motion.h2
+					className={style.heading}
+					style={{
+						y: titleTransformY,
+						scale: titleSpringScale
+					}}
+				>
+					{frontmatter.title}
+				</motion.h2>
 			</Main>
 
 			<Section>
-				<div className={style.contentArea}>
-					<motion.div
-						className={style.contentSheet}
-						initial="initial"
-						animate="enter"
-						exit="exit"
-						variants={variants}
-					>
-						{frontmatter.link && (
-							<a
-								href={frontmatter.link}
-								alt=""
-								target="_blank"
-								rel="noopener noreferrer"
-								className={style.link}
-							>
-								<Type capHeight={20}>View Site {'>'}</Type>
-							</a>
-						)}
+				<motion.div
+					className={style.contentSheet}
+					initial="initial"
+					animate="enter"
+					exit="exit"
+					variants={variants}
+				>
+					{frontmatter.link && (
+						<a
+							href={frontmatter.link}
+							alt=""
+							target="_blank"
+							rel="noopener noreferrer"
+							className={style.link}
+						>
+							<Type capHeight={20}>View Site {'>'}</Type>
+						</a>
+					)}
 
-						<div className={style.builtBy}>
-							<div>Built {wrapLastWord(frontmatter.builtBy)}</div>
+					<div className={style.info}>
+						<div className={style.infoItem}>
+							Built {wrapLastWord(frontmatter.builtBy)}
 						</div>
 
-						<div className={style.sidebar}>
-							<h2 className={style.stack}>Stack:</h2>
-							<ul>
-								{frontmatter.stack.map((item) => (
-									<li key={item}>{item}</li>
-								))}
-							</ul>
+						<div className={style.infoItem}>
+							Launched: <span>{frontmatter.date}</span>
 						</div>
-						<div className={style.content}>
-							<MDXContent>{body}</MDXContent>
-						</div>
-					</motion.div>
-				</div>
+					</div>
 
-				<div className={style.backgroundContainer}>
-					<motion.div
-						className={style.bgOverlay}
-						style={{
-							backdropFilter: blur,
-							backgroundColor: color
-						}}
-					></motion.div>
-					<BackgroundImage
-						imageProps={{
-							fluid:
-								frontmatter.featuredImage.childImageSharp.fluid,
-							className: style.image
-						}}
-						layoutId={`image-${id}`}
-						className={style.background}
-					></BackgroundImage>
-				</div>
+					<div className={style.sidebar}>
+						<h2 className={style.stack}>Stack:</h2>
+						<ul>
+							{frontmatter.stack.map((item) => (
+								<li key={item}>{item}</li>
+							))}
+						</ul>
+					</div>
+					<div className={style.content}>
+						<MDXContent>{body}</MDXContent>
+					</div>
+				</motion.div>
 			</Section>
+			<div className={style.backgroundContainer}>
+				<motion.div
+					className={style.bgOverlay}
+					style={{
+						backdropFilter: blur,
+						backgroundColor: color
+					}}
+				></motion.div>
+				<BackgroundImage
+					imageProps={{
+						fluid: frontmatter.featuredImage.childImageSharp.fluid,
+						className: style.image
+					}}
+					layoutId={`image-${id}`}
+					className={style.background}
+				></BackgroundImage>
+			</div>
 		</>
 	);
 }
@@ -141,7 +139,7 @@ export const pageQuery = graphql`
 			id
 			body
 			frontmatter {
-				date(formatString: "DD MMMM, YYYY")
+				date(formatString: "MMMM, YYYY")
 				title
 				link
 				builtBy

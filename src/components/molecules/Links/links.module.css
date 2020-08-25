@@ -48,14 +48,14 @@
 
 	padding: 10px;
 
-	filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+	/* filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2)); */
 
 	color: rgb(var(--theme-links));
 	transition: color 0.2s ease-out, background-color 0.2s ease-out;
 
 	&:hover {
-		color: rgb(var(--color-main));
-		background-color: #fff;
+		color: #fff;
+		background-color: rgb(var(--theme-secondary));
 	}
 }
 
