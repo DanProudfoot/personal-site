@@ -8,23 +8,20 @@
 		'posts';
 
 	gap: var(--space);
-
 	padding-bottom: var(--space);
 
 	@media (--v-md) {
 		grid-template-columns: 1fr 4fr;
 		grid-template-rows: auto 1fr 32px;
 		grid-template-areas:
-			'. heading'
-			'posts posts';
+			'heading heading'
+			'. posts';
 	}
 }
 
 .headingContainer {
 	display: flex;
-
 	grid-area: heading;
-
 	font-size: 36px;
 }
 
@@ -32,8 +29,8 @@
 	color: rgb(var(--color-main));
 	line-height: 1;
 
-	font-weight: var(--fw-semibold);
-
+	font-weight: var(--fw-light);
+	font-family: var(--font-sans);
 	font-size: clamp(28px, 5vw, 36px);
 }
 

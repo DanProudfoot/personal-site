@@ -2,14 +2,17 @@
 	min-height: 70vh;
 
 	display: grid;
-	grid-template-rows: repeat(2, auto);
+	grid-template-rows: 1fr auto auto 1fr;
 	gap: var(--space);
 	grid-template-areas:
+		'.'
 		'header'
-		'content';
+		'content'
+		'.';
 
 	@media (--v-md) {
 		grid-template-rows: 1fr repeat(2, auto) 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas:
 			'. . .'
 			'header header .'
@@ -18,11 +21,13 @@
 	}
 
 	@media (--v-xl) {
+		grid-template-columns: repeat(4, 1fr);
+
 		grid-template-areas:
-			'. . . . . .'
-			'. header header header . .'
-			'. . content content content .'
-			'. . . . . .';
+			'. . . .'
+			'header header header . '
+			'. content content content'
+			'. . . .';
 	}
 }
 

@@ -4,9 +4,11 @@ import { graphql } from 'gatsby';
 import { SEO } from 'src/components/atoms';
 import { Main, Section } from 'src/components/molecules';
 import { Hero, Posts } from 'src/components/organisms';
+import { useTheme } from 'src/hooks';
 
 export default function Index({ data, location }) {
 	const { introContent, works } = data;
+	useTheme('default');
 
 	return (
 		<>

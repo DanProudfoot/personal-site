@@ -3,6 +3,9 @@
 
 	z-index: 10;
 
+	display: flex;
+	align-items: center;
+
 	@media (--v-md) {
 		position: fixed;
 		right: var(--space);
@@ -11,11 +14,9 @@
 }
 
 .title {
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-	font-size: 9vh;
+	font-family: var(--font-sans);
 	text-transform: uppercase;
-	font-weight: var(--fw-bold);
+	font-weight: var(--fw-light);
 	line-height: 0.775;
 
 	white-space: nowrap;
@@ -24,24 +25,21 @@
 
 	padding-right: 0.1em;
 
-	pointer-events: all;
-
-	/* right: 0;
-	top: 32px; */
-
 	transition: color 0.5s ease-in-out;
+}
+
+.vertical .title {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	font-size: 9vh;
 
 	@media (--v-md) {
 		font-size: 10vh;
-
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: flex-start;
 	}
+}
 
-	&.workMode {
-		color: white;
-	}
+.horizontal .title {
+	font-size: clamp(32px, 10vw, 64px);
 }
 
 .link {

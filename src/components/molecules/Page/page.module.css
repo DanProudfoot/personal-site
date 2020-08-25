@@ -29,3 +29,17 @@
 		grid-template-rows: 84px minmax(50vh, min-content) 1fr;
 	}
 }
+
+.notHome {
+	grid-template-areas:
+		'links title'
+		'main main'
+		'section section';
+
+	@media (--v-md) {
+		grid-template-areas:
+			'links title'
+			'main main'
+			'section title';
+	}
+}

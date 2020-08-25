@@ -39,19 +39,19 @@ export function TimeOfDay() {
 		const hour = date.getHours();
 
 		switch (true) {
-			case hour > 20:
+			case hour >= 20:
 				return "Nice night, isn't it?";
 
-			case hour > 18:
+			case hour >= 18:
 				return 'Good Evening!';
 
-			case hour > 12:
+			case hour >= 12:
 				return 'Good Afternoon!';
 
-			case hour > 6:
+			case hour >= 6:
 				return 'Good Morning!';
 
-			case hour > 3:
+			case hour >= 2:
 				return 'Why are you awake?!?';
 
 			default:

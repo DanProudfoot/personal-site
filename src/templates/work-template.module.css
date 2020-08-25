@@ -44,7 +44,8 @@
 
 .heading {
 	font-size: clamp(36px, 5vw, 48px);
-	font-weight: var(--fw-bold);
+	font-weight: var(--fw-light);
+	font-family: var(--font-sans);
 
 	text-align: center;
 
@@ -60,12 +61,12 @@
 }
 
 .link {
-	font-size: clamp(24px, 8vw, 32px);
-	font-weight: var(--fw-bold);
+	color: #fff;
+	font-size: clamp(24px, 8vw, 28px);
+	font-weight: var(--fw-light);
+	font-family: var(--font-sans);
 
 	grid-area: link;
-
-	color: #fff;
 
 	background-color: rgba(0, 0, 0, 0.6);
 	padding: 0.5rem 1rem;
@@ -120,8 +121,7 @@
 	font-size: clamp(16px, 5vw, 22px);
 
 	ul {
-		list-style: circle;
-		padding-left: 1.5rem;
+		list-style: inside disc;
 	}
 }
 

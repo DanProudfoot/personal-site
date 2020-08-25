@@ -48,23 +48,12 @@ export function PostLink({ post, index }) {
 				}}
 			>
 				<motion.div
-					layoutId={`title-${post.id}`}
+					// layoutId={`title-${post.id}`}
 					variants={variants.tag}
 					className={style.nametag}
 				>
 					{post.frontmatter.title}
 				</motion.div>
-
-				<BackgroundImage
-					imageProps={{
-						fluid:
-							post.frontmatter.featuredImage.childImageSharp.fluid
-					}}
-					variants={variants.img}
-					initial="initial"
-					layoutId={`image-${post.id}`}
-					className={style.background}
-				></BackgroundImage>
 			</Link>
 		</motion.div>
 	);

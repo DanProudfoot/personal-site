@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
 
-import { useLocation } from './index';
+import { ThemeContext } from '../contexts/index';
 
 const themes = {
 	default: {
@@ -15,17 +15,14 @@ const themes = {
 	}
 };
 
-export function useTheme() {
-	const { pathname } = useLocation();
-	const [theme, setTheme] = useState(themes.default);
+export function useTheme(update) {
+	const { theme, setTheme } = useContext(ThemeContext);
 
 	useEffect(() => {
-		if (pathname.includes('/work/')) {
-			setTheme(themes.dark);
-		} else {
-			setTheme(themes.default);
+		if (update) {
+			setTheme(update);
 		}
-	}, [pathname]);
+	}, [update, setTheme]);
 
-	return theme;
+	return themes[theme];
 }

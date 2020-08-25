@@ -19,7 +19,8 @@ const variants = {
 	exit: {
 		opacity: 0,
 		transition: {
-			duration: 0.5
+			delay: 1,
+			duration: 2
 		}
 	}
 };
@@ -29,8 +30,8 @@ export function Main({ children, className }) {
 
 	return (
 		<motion.main
-			key={location.key}
-			className={clsx(style.main, className)}
+			key={'main' + location.key}
+			className={clsx(style.shared, style.main, className)}
 			initial="initial"
 			animate="enter"
 			exit="exit"
@@ -46,8 +47,8 @@ export function Section({ children, className }) {
 
 	return (
 		<motion.section
-			key={location.key}
-			className={clsx(style.section, className)}
+			key={'section' + location.key}
+			className={clsx(style.shared, style.section, className)}
 			initial="initial"
 			animate="enter"
 			exit="exit"

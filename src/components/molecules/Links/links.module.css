@@ -30,9 +30,9 @@
 
 	backdrop-filter: blur(10px);
 
-	@media (--v-md) {
+	/* @media (--v-md) {
 		position: fixed;
-	}
+	} */
 }
 
 .link {

@@ -13,6 +13,7 @@ import { Main, Section } from 'src/components/molecules';
 import { MDXContent, BackgroundImage, Type } from 'src/components/atoms';
 
 import style from './work-template.module.css';
+import { useTheme } from 'src/hooks/useTheme';
 
 const variants = {
 	initial: {
@@ -37,9 +38,11 @@ const wrapLastWord = (text) => {
 	);
 };
 
-export default function Template({ data }) {
+export default function WorkTemplate({ data }) {
 	const { mdx } = data;
 	const { frontmatter, body, id } = mdx;
+
+	useTheme('dark');
 
 	const { scrollY } = useViewportScroll();
 
@@ -74,7 +77,6 @@ export default function Template({ data }) {
 					className={style.contentSheet}
 					initial="initial"
 					animate="enter"
-					exit="exit"
 					variants={variants}
 				>
 					{frontmatter.link && (
@@ -112,6 +114,7 @@ export default function Template({ data }) {
 					</div>
 				</motion.div>
 			</Section>
+
 			<div className={style.backgroundContainer}>
 				<motion.div
 					className={style.bgOverlay}
@@ -125,7 +128,6 @@ export default function Template({ data }) {
 						fluid: frontmatter.featuredImage.childImageSharp.fluid,
 						className: style.image
 					}}
-					layoutId={`image-${id}`}
 					className={style.background}
 				></BackgroundImage>
 			</div>

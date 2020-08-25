@@ -7,10 +7,13 @@
 @custom-media --v-xl (width >= 1200px);
 
 :root {
-	--font-josefin: 'Josefin Sans', sans-serif;
+	--font-sans: 'Josefin Sans', sans-serif;
+	--font-slab: 'Roboto Slab', serif;
 	--fw-bold: 700;
 	--fw-semibold: 600;
 	--fw-regular: 400;
+	--fw-light: 300;
+	--fw-thin: 100;
 
 	--color-main: 126, 86, 242;
 	--color-secondary: 255, 92, 147;
@@ -32,14 +35,14 @@ html {
 
 	color: rgba(255, 255, 255);
 
-	line-height: 1.25;
+	line-height: 1.66;
 
 	background-color: #fff;
-	/* scroll-behavior: smooth; */
 }
 
 body {
 	min-height: 100vh;
 
-	font-family: var(--font-josefin);
+	font-family: var(--font-slab);
+	font-weight: var(--fw-light);
 }

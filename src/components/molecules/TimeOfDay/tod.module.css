@@ -1,7 +1,8 @@
 .heading {
 	/* font-size: 62px; */
 	font-size: clamp(42px, 5vw, 62px);
-	font-weight: var(--fw-semibold);
+	font-family: var(--font-sans);
+	font-weight: var(--fw-light);
 	line-height: 0.9;
 	letter-spacing: -0.03em;
 
