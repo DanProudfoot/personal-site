@@ -24,16 +24,16 @@
 	em {
 		font-style: normal;
 		font-weight: var(--fw-regular);
-		color: rgb(var(--color-main));
+		color: rgb(var(--theme-highlight));
 		font-family: var(--font-sans);
 	}
 
 	a {
-		text-decoration: underline rgb(var(--color-secondary)) dashed;
+		text-decoration: underline rgb(var(--theme-primary)) dashed;
 
 		&:hover {
 			text-decoration: none;
-			color: rgb(var(--color-secondary));
+			color: rgb(var(--theme-primary));
 		}
 	}
 }

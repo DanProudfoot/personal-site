@@ -10,6 +10,7 @@ builtBy: 'at Kerve'
 stack:
     - Leap Motion
     - React
+scheme: dark
 ---
 
 Designed for a travelling showcase event for Anglian Water, this simple game used a Leap Motion to track a users hands to play a game.

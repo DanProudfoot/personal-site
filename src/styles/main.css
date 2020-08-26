@@ -15,8 +15,12 @@
 	--fw-light: 300;
 	--fw-thin: 100;
 
-	--color-main: 126, 86, 242;
-	--color-secondary: 255, 92, 147;
+	--color-1: 239, 131, 84;
+	--color-2: 79, 93, 117;
+	--color-3: 191, 192, 192;
+
+	--color-black: 45, 49, 66;
+	--color-white: 244, 244, 244;
 
 	--space: 1rem;
 

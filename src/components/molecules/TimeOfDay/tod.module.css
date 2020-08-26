@@ -6,7 +6,7 @@
 	line-height: 0.9;
 	letter-spacing: -0.03em;
 
-	color: rgb(var(--color-main));
+	color: rgb(var(--theme-secondary));
 }
 
 .heading span {

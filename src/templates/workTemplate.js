@@ -7,6 +7,7 @@ import {
 	useMotionTemplate,
 	useSpring
 } from 'framer-motion';
+import Image from 'gatsby-image';
 
 import { SEO } from 'src/components/atoms';
 import { Main, Section } from 'src/components/molecules';
@@ -40,17 +41,17 @@ const wrapLastWord = (text) => {
 
 export default function WorkTemplate({ data }) {
 	const { mdx } = data;
-	const { frontmatter, body, id } = mdx;
+	const { frontmatter, body } = mdx;
 
-	useTheme('dark');
+	useTheme(frontmatter.scheme || 'dark');
 
 	const { scrollY } = useViewportScroll();
 
-	const blurTransform = useTransform(scrollY, [0, 200], [5, 0]);
-	const colorTransform = useTransform(scrollY, [0, 200], [0, 0.8]);
+	const blurTransform = useTransform(scrollY, [0, 200], [0, 5]);
+	// const colorTransform = useTransform(scrollY, [0, 200], [0, 0.8]);
 
 	const blur = useMotionTemplate`blur(${blurTransform}px)`;
-	const color = useMotionTemplate`rgba(0,0,0, ${colorTransform})`;
+	// const color = useMotionTemplate`rgba(0,0,0, ${colorTransform})`;
 
 	const titleTransformY = useTransform(scrollY, [0, 200], ['-25vh', '0vh']);
 	const titleScale = useTransform(scrollY, [0, 200], [1, 0.75]);
@@ -93,11 +94,13 @@ export default function WorkTemplate({ data }) {
 
 					<div className={style.info}>
 						<div className={style.infoItem}>
-							Built {wrapLastWord(frontmatter.builtBy)}
+							<div>Built {wrapLastWord(frontmatter.builtBy)}</div>
 						</div>
 
 						<div className={style.infoItem}>
-							Launched: <span>{frontmatter.date}</span>
+							<div>
+								Launched: <span>{frontmatter.date}</span>
+							</div>
 						</div>
 					</div>
 
@@ -109,8 +112,19 @@ export default function WorkTemplate({ data }) {
 							))}
 						</ul>
 					</div>
+
 					<div className={style.content}>
 						<MDXContent>{body}</MDXContent>
+					</div>
+
+					<div className={style.gallery}>
+						{frontmatter?.gallery?.map((item) => (
+							<Image
+								key={item.childImageSharp.id}
+								className={style.galleryImage}
+								fluid={item.childImageSharp.fluid}
+							></Image>
+						))}
 					</div>
 				</motion.div>
 			</Section>
@@ -119,8 +133,8 @@ export default function WorkTemplate({ data }) {
 				<motion.div
 					className={style.bgOverlay}
 					style={{
-						backdropFilter: blur,
-						backgroundColor: color
+						backdropFilter: blur
+						// backgroundColor: color
 					}}
 				></motion.div>
 				<BackgroundImage
@@ -141,11 +155,19 @@ export const pageQuery = graphql`
 			id
 			body
 			frontmatter {
-				date(formatString: "MMMM, YYYY")
+				date(formatString: "MMMM YYYY")
 				title
 				link
 				builtBy
 				stack
+				gallery {
+					childImageSharp {
+						id
+						fluid(maxWidth: 1080, quality: 80) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 				featuredImage {
 					childImageSharp {
 						fluid(maxWidth: 1920, quality: 80) {

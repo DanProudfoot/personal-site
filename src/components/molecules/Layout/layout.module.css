@@ -17,5 +17,5 @@
 
 .main + .section,
 .section + .section {
-	margin-top: calc(var(--space) * 5);
+	margin-top: calc(var(--space) * 2);
 }

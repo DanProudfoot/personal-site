@@ -10,13 +10,12 @@ export function Page({ children }) {
 	const { pathname } = useLocation();
 	const isHome = pathname === '/';
 
-	console.log(theme);
-
 	return (
 		<div
 			className={clsx(style.page, { [style.notHome]: !isHome })}
 			style={{
 				'--theme-primary': theme.primary,
+				'--theme-highlight': theme.highlight,
 				'--theme-secondary': theme.secondary,
 				'--theme-links': theme.links
 			}}

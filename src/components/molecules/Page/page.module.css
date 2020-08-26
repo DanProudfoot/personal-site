@@ -30,7 +30,7 @@
 	}
 }
 
-.notHome {
+/* .notHome {
 	grid-template-areas:
 		'links title'
 		'main main'
@@ -42,4 +42,4 @@
 			'main main'
 			'section title';
 	}
-}
+} */

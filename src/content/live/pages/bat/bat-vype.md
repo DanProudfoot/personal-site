@@ -1,15 +1,20 @@
 ---
 type: 'work'
 path: '/work/bat-vype'
-date: '2020-05-03'
+date: '2019-11-01'
 title: 'BAT Retail stores'
 active: true
 link: ''
-featuredImage: '../../images/work/bat/kerve_news_vype_store_1'
+featuredImage: 'kerve_news_vype_store_1.jpg'
 builtBy: 'at Kerve'
+scheme: dark
 stack:
     - Fully React
     - JSON backend
+gallery:
+    - 'kerve_news_vype_store_1.jpg'
+    - 'kerve_news_vype_store_2.jpg'
+    - 'trial-tab.png'
 ---
 
 The Big One. A massive project for a big client. We were tasked with building all of the in-store interactive displays for the rollout of the "Vype Inspiration" stores across the UK, Germany and Poland for British American Tobacco

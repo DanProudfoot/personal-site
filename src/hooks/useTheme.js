@@ -4,14 +4,16 @@ import { ThemeContext } from '../contexts/index';
 
 const themes = {
 	default: {
-		primary: 'var(--color-main)',
-		secondary: 'var(--color-secondary)',
-		links: 'var(--color-main)'
+		primary: 'var(--color-1)',
+		highlight: 'var(--color-1)',
+		secondary: 'var(--color-2)',
+		links: 'var(--color-1)'
 	},
 	dark: {
-		primary: '255, 255, 255',
-		secondary: '0, 0, 0',
-		links: '255, 255, 255'
+		primary: 'var(--color-white)',
+		highlight: 'var(--color-1)',
+		secondary: 'var(--color-black)',
+		links: 'var(--color-1)'
 	}
 };
 
