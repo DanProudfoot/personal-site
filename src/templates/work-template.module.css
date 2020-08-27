@@ -76,9 +76,8 @@
 	transition: all 0.2s ease-out;
 
 	&:hover {
-		background-color: rgba(var(--theme-primary));
+		background-color: rgba(var(--theme-highlight));
 		color: #fff;
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 	}
 }
 

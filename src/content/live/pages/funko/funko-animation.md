@@ -4,14 +4,17 @@ path: '/work/funko-animation'
 date: '2020-05-03'
 title: 'Funko Animation Studios'
 link: 'https://funkoanimationstudios.tv'
-featuredImage: '../../images/work/funko/funko.png'
+featuredImage: 'funko-main.png'
 active: true
-builtBy: 'by myself'
+builtBy: 'by Myself'
 stack:
     - Gatsby
     - Netlify-CMS
     - Netlify
     - Formspree
+gallery:
+    - 'funko-main.png'
+    - 'funko-jobs.png'
 ---
 
 Funko Animation Studios are the animation arm of the massive toy company Funko, famous for their popular (heh) "Pop" figures.
