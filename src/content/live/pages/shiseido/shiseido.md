@@ -1,10 +1,11 @@
 ---
 type: 'work'
 path: '/work/shiseido'
-date: '2020-05-03'
+date: '2019-03-01'
 title: 'NARS / Laura Mercier'
 link: ''
-featuredImage: '../../images/icon.png'
+featuredImage: 'shis-featured.png'
+featuredVideo: 'nars-runthrough'
 active: true
 builtBy: 'at Kerve'
 stack:
@@ -12,6 +13,10 @@ stack:
     - Printers
     - React
     - Node
+gallery:
+    - 'shis-1.png'
+    - 'shis-2.png'
+    - 'shis-3.png'
 ---
 
 Shiseido, parent company of cosmetic brands Laura Mercier and NARS wanted us to build a product customiser that would sit in various John Lewis and House of Fraser stores around the UK.

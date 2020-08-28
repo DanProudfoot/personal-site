@@ -1,10 +1,10 @@
 ---
 type: 'work'
 path: '/work/vodafone-pinball'
-date: '2020-05-03'
+date: '2020-02-01'
 title: 'Vodafone 5G Giga Pinball'
 link: ''
-featuredImage: '../../images/icon.png'
+featuredImage: ''
 active: true
 builtBy: 'at Kerve'
 stack:

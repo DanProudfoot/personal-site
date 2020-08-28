@@ -1,7 +1,7 @@
 ---
 type: 'work'
 path: '/work/funko-animation'
-date: '2020-05-03'
+date: '2019-09-01'
 title: 'Funko Animation Studios'
 link: 'https://funkoanimationstudios.tv'
 featuredImage: 'funko-main.png'
