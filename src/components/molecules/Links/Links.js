@@ -8,6 +8,25 @@ import Twitter from 'src/media/images/twitter.svg';
 
 import style from './links.module.css';
 
+const variants = {
+	initial: {
+		scale: 1.5,
+		// x: '50%',
+		// y: '50%',
+		filter: 'blur(20px)'
+	},
+	enter: {
+		scale: 1,
+		// x: '0%',
+		// y: '0%',
+		filter: 'blur(0px)',
+		transition: {
+			delay: 1,
+			duration: 2.5
+		}
+	}
+};
+
 export function Links() {
 	const { scrollY } = useViewportScroll();
 	const backgroundTransform = useTransform(
@@ -15,19 +34,16 @@ export function Links() {
 		[0, 300],
 		['rgba(255,255,255, 0)', 'rgba(255,255,255, 0.3)']
 	);
-	// const colorTransform = useTransform(
-	// 	scrollY,
-	// 	[0, 100],
-	// 	['rgba(0, 0, 0, 1)', 'rgba(255, 255, 255, 1)']
-	// );
 
 	return (
 		<div className={style.links}>
 			<motion.div
 				className={style.group}
+				variants={variants}
+				initial="initial"
+				animate="enter"
 				style={{
 					backgroundColor: backgroundTransform
-					// color: colorTransform
 				}}
 			>
 				<ExternalLink to="https://twitter.com/DanProudfeet">

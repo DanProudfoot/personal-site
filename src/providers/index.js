@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
+import { CloudinaryContext } from 'cloudinary-react';
 
-import { ThemeContext, LocationContext } from '../contexts/index';
+import { ThemeContext, LocationContext, BackgroundContext } from '../contexts';
 
 export default function Providers({ children, location }) {
 	const [theme, setTheme] = useState('default');
+	const [background, setBackground] = useState({ type: 'image', image: '' });
 
 	return (
-		<ThemeContext.Provider value={{ theme, setTheme }}>
-			<LocationContext.Provider value={location}>
-				{children}
-			</LocationContext.Provider>
-		</ThemeContext.Provider>
+		<CloudinaryContext
+			cloudName={process.env.GATSBY_CLOUDINARY_CLOUD_NAME}
+			apiKey={process.env.GATSBY_CLOUDINARY_API_KEY}
+			apiSecret={process.env.GATSBY_CLOUDINARY_API_SECRET}
+		>
+			<ThemeContext.Provider value={{ theme, setTheme }}>
+				<LocationContext.Provider value={location}>
+					<BackgroundContext.Provider
+						value={{ background, setBackground }}
+					>
+						{children}
+					</BackgroundContext.Provider>
+				</LocationContext.Provider>
+			</ThemeContext.Provider>
+		</CloudinaryContext>
 	);
 }

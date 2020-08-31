@@ -11,15 +11,24 @@ const variants = {
 	initial: (custom) => ({
 		// position: 'absolute',
 		// top: window.scrollY,
-		opacity: 0
+		opacity: 0,
+		scale: 0.8,
+		filter: 'blur(10px)'
 	}),
 	enter: (custom) => ({
-		opacity: 1
+		opacity: 1,
+		scale: 1,
+		filter: 'blur(0px)',
+		transition: {
+			duration: 2,
+			delay: 1
+		}
 	}),
 	exit: {
 		opacity: 0,
+		scale: 1.2,
+		filter: 'blur(20px)',
 		transition: {
-			delay: 1,
 			duration: 2
 		}
 	}

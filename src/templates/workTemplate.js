@@ -8,6 +8,7 @@ import {
 	useSpring
 } from 'framer-motion';
 import Image from 'gatsby-image';
+import { Video } from 'cloudinary-react';
 
 import { SEO } from 'src/components/atoms';
 import { Main, Section } from 'src/components/molecules';
@@ -125,11 +126,21 @@ export default function WorkTemplate({ data }) {
 								fluid={item.childImageSharp.fluid}
 							></Image>
 						))}
+
+						{/* {frontmatter.featuredVideo && (
+							<Video
+								publicId={frontmatter.featuredVideo}
+								width="500"
+								crop="scale"
+								loop={true}
+								autoPlay={true}
+							></Video>
+						)} */}
 					</div>
 				</motion.div>
 			</Section>
 
-			<div className={style.backgroundContainer}>
+			{/* <div className={style.backgroundContainer}>
 				<motion.div
 					className={style.bgOverlay}
 					style={{
@@ -144,7 +155,7 @@ export default function WorkTemplate({ data }) {
 					}}
 					className={style.background}
 				></BackgroundImage>
-			</div>
+			</div> */}
 		</>
 	);
 }
@@ -168,6 +179,7 @@ export const pageQuery = graphql`
 						}
 					}
 				}
+				featuredVideo
 				featuredImage {
 					childImageSharp {
 						fluid(maxWidth: 1920, quality: 80) {

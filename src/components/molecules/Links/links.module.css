@@ -28,7 +28,9 @@
 	padding: 0.5rem 1rem;
 	border-radius: 1rem;
 
-	backdrop-filter: blur(10px);
+	/* backdrop-filter: blur(10px); */
+
+	transform-origin: bottom right;
 
 	/* @media (--v-md) {
 		position: fixed;

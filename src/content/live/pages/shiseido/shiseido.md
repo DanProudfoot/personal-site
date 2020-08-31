@@ -5,7 +5,7 @@ date: '2019-03-01'
 title: 'NARS / Laura Mercier'
 link: ''
 featuredImage: 'shis-featured.png'
-featuredVideo: 'nars-runthrough'
+featuredVideo: 'danproudfoot/nars-runthrough'
 active: true
 builtBy: 'at Kerve'
 stack:

@@ -1,5 +1,4 @@
 /**
-
  * Implement Gatsby's Browser APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
@@ -10,7 +9,7 @@
 const React = require('react');
 const { AnimatePresence } = require('framer-motion');
 
-const { Header } = require('./src/components/organisms');
+const { Header, BackgroundBlock } = require('./src/components/organisms');
 const { Page, Links } = require('./src/components/molecules');
 const Providers = require('./src/providers').default;
 
@@ -24,6 +23,7 @@ exports.wrapPageElement = ({ element, props }) => {
 				<Header {...props}></Header>
 				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
 			</Page>
+			<BackgroundBlock></BackgroundBlock>
 		</Providers>
 	);
 };

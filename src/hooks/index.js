@@ -6,3 +6,4 @@ export function useLocation() {
 }
 
 export * from './useTheme';
+export * from './useBackground';
