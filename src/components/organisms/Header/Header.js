@@ -8,20 +8,20 @@ import style from './header.module.css';
 
 const variants = {
 	initial: {
-		scale: 1.5,
-		x: '50%',
-		y: '50%',
-		filter: 'blur(20px)'
+		// 	scale: 1.5,
+		// 	x: '50%',
+		// 	y: '50%',
+		// 	filter: 'blur(20px)'
 	},
 	enter: {
-		scale: 1,
-		x: '0%',
-		y: '0%',
-		filter: 'blur(0px)',
-		transition: {
-			delay: 1,
-			duration: 2.5
-		}
+		// scale: 1,
+		// x: '0%',
+		// y: '0%',
+		// filter: 'blur(0px)',
+		// transition: {
+		// 	delay: 1,
+		// 	duration: 2.5
+		// }
 	}
 };
 

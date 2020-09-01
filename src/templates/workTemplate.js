@@ -4,7 +4,6 @@ import {
 	motion,
 	useViewportScroll,
 	useTransform,
-	useMotionTemplate,
 	useSpring
 } from 'framer-motion';
 import Image from 'gatsby-image';
@@ -12,10 +11,10 @@ import { Video } from 'cloudinary-react';
 
 import { SEO } from 'src/components/atoms';
 import { Main, Section } from 'src/components/molecules';
-import { MDXContent, BackgroundImage, Type } from 'src/components/atoms';
+import { MDXContent, Type } from 'src/components/atoms';
 
 import style from './work-template.module.css';
-import { useTheme } from 'src/hooks/useTheme';
+import { useTheme, useBackground } from 'src/hooks';
 
 const variants = {
 	initial: {
@@ -45,14 +44,9 @@ export default function WorkTemplate({ data }) {
 	const { frontmatter, body } = mdx;
 
 	useTheme(frontmatter.scheme || 'dark');
+	useBackground({ type: 'image', value: frontmatter.featuredImage });
 
 	const { scrollY } = useViewportScroll();
-
-	const blurTransform = useTransform(scrollY, [0, 200], [0, 5]);
-	// const colorTransform = useTransform(scrollY, [0, 200], [0, 0.8]);
-
-	const blur = useMotionTemplate`blur(${blurTransform}px)`;
-	// const color = useMotionTemplate`rgba(0,0,0, ${colorTransform})`;
 
 	const titleTransformY = useTransform(scrollY, [0, 200], ['-25vh', '0vh']);
 	const titleScale = useTransform(scrollY, [0, 200], [1, 0.75]);
@@ -139,23 +133,6 @@ export default function WorkTemplate({ data }) {
 					</div>
 				</motion.div>
 			</Section>
-
-			{/* <div className={style.backgroundContainer}>
-				<motion.div
-					className={style.bgOverlay}
-					style={{
-						backdropFilter: blur
-						// backgroundColor: color
-					}}
-				></motion.div>
-				<BackgroundImage
-					imageProps={{
-						fluid: frontmatter.featuredImage.childImageSharp.fluid,
-						className: style.image
-					}}
-					className={style.background}
-				></BackgroundImage>
-			</div> */}
 		</>
 	);
 }

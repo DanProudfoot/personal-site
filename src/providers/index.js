@@ -5,7 +5,10 @@ import { ThemeContext, LocationContext, BackgroundContext } from '../contexts';
 
 export default function Providers({ children, location }) {
 	const [theme, setTheme] = useState('default');
-	const [background, setBackground] = useState({ type: 'image', image: '' });
+	const [background, setBackground] = useState({
+		type: 'none',
+		value: undefined
+	});
 
 	return (
 		<CloudinaryContext
