@@ -1,21 +1,25 @@
-.shared {
-	position: relative;
-	z-index: 1;
+.layout {
+	display: grid;
+	grid-template-columns: minmax(var(--space), 1fr) minmax(min-content, 1080px) minmax(
+			var(--space),
+			1fr
+		);
+	grid-template-rows: 1fr;
+	grid-template-areas: '. content .';
 
-	max-width: 1080px;
-	width: 100%;
-	margin: 0 auto;
+	position: relative;
+
+	z-index: 1;
 }
 
-.main {
-	grid-area: main;
+.layoutInner {
+	grid-area: content;
 }
 
 .section {
-	grid-area: section;
+	position: relative;
 }
 
-.main + .section,
 .section + .section {
 	margin-top: calc(var(--space) * 2);
 }

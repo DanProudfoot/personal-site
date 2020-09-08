@@ -7,17 +7,13 @@
 @custom-media --v-xl (width >= 1200px);
 
 :root {
-	--font-sans: 'Josefin Sans', sans-serif;
-	--font-slab: 'Roboto Slab', serif;
+	--font-headline: 'Josefin Sans', sans-serif;
+	--font-body: 'Lato', serif;
 	--fw-bold: 700;
 	--fw-semibold: 600;
 	--fw-regular: 400;
 	--fw-light: 300;
 	--fw-thin: 100;
-
-	/* --color-1: 239, 131, 84;
-	--color-2: 79, 93, 117;
-	--color-3: 191, 192, 192; */
 
 	--color-1: 126, 86, 242; /* #7E56F2 */
 	--color-2: 229, 107, 112; /* #E56B70 */
@@ -51,6 +47,6 @@ html {
 body {
 	min-height: 100vh;
 
-	font-family: var(--font-slab);
-	font-weight: var(--fw-light);
+	font-family: var(--font-body);
+	font-weight: var(--fw-regular);
 }

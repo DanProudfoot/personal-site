@@ -48,8 +48,8 @@ module.exports = {
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
 				fonts: [
-					`josefin sans:100,300,400,600,700`, // you can also specify font weights and styles
-					`roboto slab:300,600,700` // you can also specify font weights and styles
+					`josefin sans:300,400,600,700`, // you can also specify font weights and styles
+					`lato:300,400,600,700` // you can also specify font weights and styles
 				],
 				display: 'swap'
 			}

@@ -18,14 +18,11 @@ exports.wrapPageElement = ({ element, props }) => {
 	// including location, data, etc - you don't need to pass it
 	return (
 		<Providers location={props.location}>
-			<>
-				<Page>
-					<Links></Links>
-					<Header {...props}></Header>
-					<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
-				</Page>
-				<BackgroundBlock></BackgroundBlock>
-			</>
+			<Page>
+				{/* <Links></Links> */}
+				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+			</Page>
+			<BackgroundBlock></BackgroundBlock>
 		</Providers>
 	);
 };

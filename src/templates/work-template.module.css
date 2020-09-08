@@ -45,7 +45,7 @@
 .heading {
 	font-size: clamp(40px, 5vw, 64px);
 	font-weight: var(--fw-light);
-	font-family: var(--font-sans);
+	font-family: var(--font-headline);
 	line-height: 1em;
 
 	text-align: center;
@@ -65,7 +65,7 @@
 	color: #fff;
 	font-size: clamp(24px, 8vw, 28px);
 	font-weight: var(--fw-light);
-	font-family: var(--font-sans);
+	font-family: var(--font-headline);
 
 	grid-area: link;
 

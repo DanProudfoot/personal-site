@@ -14,7 +14,7 @@
 }
 
 .title {
-	font-family: var(--font-sans);
+	font-family: var(--font-headline);
 	text-transform: uppercase;
 	font-weight: var(--fw-light);
 	line-height: 0.775;

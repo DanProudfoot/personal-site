@@ -1,0 +1,36 @@
+.home {
+	background-color: rgb(var(--color-1));
+}
+
+.spacer {
+	min-height: 95vh;
+}
+
+.layout {
+	min-height: 100vh;
+
+	padding: var(--space) 0;
+
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4d4d4' fill-opacity='0.24' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+
+	mask-image: linear-gradient(
+			to top right,
+			white,
+			white 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(
+			to top left,
+			white,
+			white 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(to bottom, transparent 30px, black 30px);
+	mask-size: 30px 30px, 30px 30px, 100% 100%;
+	mask-repeat: repeat-x, repeat-x, no-repeat;
+	mask-position: top;
+}

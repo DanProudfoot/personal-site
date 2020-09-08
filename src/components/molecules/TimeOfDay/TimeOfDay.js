@@ -6,28 +6,44 @@ import style from './tod.module.css';
 const variants = {
 	hi: {
 		initial: {
-			x: '-50%',
+			y: '-50%',
 			opacity: 0
 		},
 		enter: {
-			x: '0%',
+			y: '0%',
 			opacity: 1,
+			textShadow: `6px 6px 0px rgba(0,0,0,0.1)`,
+
 			transition: {
-				duration: 1.2
+				delay: 0.4,
+				y: {},
+				opacity: {
+					duration: 0.2
+				},
+				textShadow: {
+					delay: 0.8
+				}
 			}
 		}
 	},
 	time: {
 		initial: {
-			x: '-20%',
+			y: '-50%',
 			opacity: 0
 		},
 		enter: {
-			x: '0%',
+			y: '0%',
 			opacity: 1,
+			textShadow: `6px 6px 0px rgba(0,0,0,0.2)`,
 			transition: {
-				duration: 1,
-				delay: 0.6
+				delay: 0.1,
+				y: {},
+				opacity: {
+					duration: 0.2
+				},
+				textShadow: {
+					delay: 0.8
+				}
 			}
 		}
 	}

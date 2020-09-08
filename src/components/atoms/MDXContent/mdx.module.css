@@ -5,7 +5,7 @@
 		font-weight: var(--fw-semibold);
 		line-height: 0.9;
 		letter-spacing: -3%;
-		font-family: var(--font-sans);
+		font-family: var(--font-headline);
 	}
 
 	h1 {
@@ -23,9 +23,8 @@
 
 	em {
 		font-style: normal;
-		font-weight: var(--fw-regular);
+		font-weight: var(--fw-semibold);
 		color: rgb(var(--theme-highlight));
-		font-family: var(--font-sans);
 	}
 
 	a {

@@ -10,7 +10,7 @@ import Image from 'gatsby-image';
 import { Video } from 'cloudinary-react';
 
 import { SEO } from 'src/components/atoms';
-import { Main, Section } from 'src/components/molecules';
+import { Section } from 'src/components/molecules';
 import { MDXContent, Type } from 'src/components/atoms';
 
 import style from './work-template.module.css';
@@ -56,7 +56,7 @@ export default function WorkTemplate({ data }) {
 	return (
 		<>
 			<SEO title={frontmatter.title}></SEO>
-			<Main className={style.main}>
+			{/* <Main className={style.main}>
 				<motion.h2
 					className={style.heading}
 					style={{
@@ -66,7 +66,7 @@ export default function WorkTemplate({ data }) {
 				>
 					{frontmatter.title}
 				</motion.h2>
-			</Main>
+			</Main> */}
 
 			<Section>
 				<motion.div

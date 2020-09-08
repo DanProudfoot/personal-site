@@ -11,59 +11,58 @@ const variants = {
 	initial: (custom) => ({
 		// position: 'absolute',
 		// top: window.scrollY,
-		opacity: 0,
-		scale: 0.8,
-		filter: 'blur(10px)'
+		opacity: 0
+		// scale: 0.8,
+		// filter: 'blur(10px)'
 	}),
 	enter: (custom) => ({
-		opacity: 1,
-		scale: 1,
-		filter: 'blur(0px)',
-		transition: {
-			duration: 2,
-			delay: 1
-		}
+		opacity: 1
+		// scale: 1,
+		// filter: 'blur(0px)',
+		// transition: {
+		// 	duration: 2,
+		// 	delay: 1
+		// }
 	}),
 	exit: {
-		opacity: 0,
-		scale: 1.2,
-		filter: 'blur(20px)',
-		transition: {
-			duration: 2
-		}
+		opacity: 0
+		// scale: 1.2,
+		// filter: 'blur(20px)',
+		// transition: {
+		// 	duration: 2
+		// }
 	}
 };
 
-export function Main({ children, className }) {
+export function Layout({ children, className }) {
 	const location = useLocation();
 
 	return (
 		<motion.main
 			key={'main' + location.key}
-			className={clsx(style.shared, style.main, className)}
+			className={clsx(style.layout, className)}
 			initial="initial"
 			animate="enter"
 			exit="exit"
 			variants={variants}
 		>
-			{children}
+			<div className={style.layoutInner}>{children}</div>
 		</motion.main>
 	);
 }
 
-export function Section({ children, className }) {
-	const location = useLocation();
+// export function Main({ children, className }) {
+// 	return (
+// 		<header className={clsx(style.shared, style.main, className)}>
+// 			{children}
+// 		</header>
+// 	);
+// }
 
+export function Section({ children, className }) {
 	return (
-		<motion.section
-			key={'section' + location.key}
-			className={clsx(style.shared, style.section, className)}
-			initial="initial"
-			animate="enter"
-			exit="exit"
-			variants={variants}
-		>
+		<section className={clsx(style.shared, style.section, className)}>
 			{children}
-		</motion.section>
+		</section>
 	);
 }
