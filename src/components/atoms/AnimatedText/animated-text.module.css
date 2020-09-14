@@ -20,6 +20,7 @@
 }
 
 .line {
+	color: #fff;
 	font-family: var(--font-headline);
 	font-weight: 800;
 	text-transform: uppercase;

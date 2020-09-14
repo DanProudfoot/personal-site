@@ -5,12 +5,18 @@
 	top: 0;
 
 	z-index: 10;
+}
 
-	/* padding: var(--space) 0; */
-	/*
-	display: grid;
-	grid-template-rows: minmax(1fr);
-	grid-template-columns: 1fr;
-	grid-template-areas: 'main';
-	gap: var(--space); */
+.wipe {
+	position: fixed;
+	width: 150vw;
+	height: 100vh;
+	z-index: 1000;
+
+	top: 0;
+	/* left: -150vw; */
+
+	background-color: rgb(var(--color-1));
+
+	/* transform: rotate(90deg); */
 }

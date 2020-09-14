@@ -19,7 +19,7 @@
 	--color-2: 229, 107, 112; /* #E56B70 */
 	--color-3: 108, 212, 255; /* #6CD4FF */
 
-	--color-black: 48, 54, 51; /*#303633 */
+	--color-black: 43, 45, 44; /*#303633 */
 	--color-white: 244, 244, 244;
 
 	--space: 1rem;
@@ -41,7 +41,7 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	color: rgba(255, 255, 255);
+	color: rgb(var(--color-black));
 
 	line-height: 1.66;
 

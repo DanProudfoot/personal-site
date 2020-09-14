@@ -1,5 +1,4 @@
 export * from './BackgroundImage/BackgroundImage';
-export * from './Type/Type';
 export * from './Heading/Heading';
 export * from './MDXContent/MDXContent';
 export * from './PostLink/PostLink';

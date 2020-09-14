@@ -3,13 +3,14 @@ import { graphql } from 'gatsby';
 
 import { SEO } from 'src/components/atoms';
 import { HomePage } from 'src/components/organisms';
+import { Transition } from 'src/components/molecules';
 
-export default function Index({ data, location }) {
+export default function Index({ data }) {
 	return (
-		<>
+		<Transition>
 			<SEO title="Home"></SEO>
 			<HomePage data={data}></HomePage>
-		</>
+		</Transition>
 	);
 }
 
