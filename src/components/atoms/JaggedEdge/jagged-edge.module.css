@@ -1,0 +1,44 @@
+.jagged {
+}
+
+.top {
+	mask-image: linear-gradient(
+			to top right,
+			white,
+			white 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(
+			to top left,
+			white,
+			white 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(to bottom, transparent 30px, black 30px);
+	mask-size: 30px 30px, 30px 30px, 100% 100%;
+	mask-repeat: repeat-x, repeat-x, no-repeat;
+	mask-position: top;
+}
+
+.bottom {
+	mask-image: linear-gradient(
+			to bottom right,
+			white,
+			white 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(
+			to bottom left,
+			white,
+			white 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(to top, transparent 30px, black 30px);
+	mask-size: 30px 30px, 30px 30px, 100% 100%;
+	mask-repeat: repeat-x, repeat-x, no-repeat;
+	mask-position: bottom;
+}

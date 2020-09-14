@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { useLocation, useTheme } from 'src/hooks';
 
 import style from './page.module.css';
+import 'src/styles/main.css';
 
 export function Page({ children }) {
 	const theme = useTheme();

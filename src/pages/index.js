@@ -3,11 +3,8 @@ import { graphql } from 'gatsby';
 
 import { SEO } from 'src/components/atoms';
 import { HomePage } from 'src/components/organisms';
-import { useTheme, useBackground } from 'src/hooks';
 
 export default function Index({ data, location }) {
-	// useTheme('dark');
-
 	return (
 		<>
 			<SEO title="Home"></SEO>

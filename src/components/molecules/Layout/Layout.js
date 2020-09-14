@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'src/hooks';
 
 import style from './layout.module.css';
-import 'src/styles/main.css';
 
 const variants = {
 	initial: (custom) => ({
@@ -39,7 +38,7 @@ export function Layout({ children, className }) {
 
 	return (
 		<motion.main
-			key={'main' + location.key}
+			key={location.key}
 			className={clsx(style.layout, className)}
 			initial="initial"
 			animate="enter"
@@ -50,14 +49,6 @@ export function Layout({ children, className }) {
 		</motion.main>
 	);
 }
-
-// export function Main({ children, className }) {
-// 	return (
-// 		<header className={clsx(style.shared, style.main, className)}>
-// 			{children}
-// 		</header>
-// 	);
-// }
 
 export function Section({ children, className }) {
 	return (
