@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
+import { Heading } from 'src/components/atoms';
+
 import style from './tod.module.css';
 
 const variants = {
@@ -77,21 +79,10 @@ export function TimeOfDay() {
 
 	return (
 		<h1 className={style.heading}>
-			<motion.span
-				variants={variants.hi}
-				initial="initial"
-				animate="enter"
-				className={style.hi}
-			>
+			<Heading as="div" delay={0.2}>
 				Hi,
-			</motion.span>
-			<motion.span
-				variants={variants.time}
-				initial="initial"
-				animate="enter"
-			>
-				{time}
-			</motion.span>
+			</Heading>
+			<Heading as="div">{time}</Heading>
 		</h1>
 	);
 }

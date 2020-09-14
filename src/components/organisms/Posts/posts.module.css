@@ -7,7 +7,7 @@
 		'heading'
 		'posts';
 
-	gap: calc(var(--space) * 2);
+	gap: var(--space2);
 	padding-bottom: var(--space);
 	/*
 	@media (--v-md) {
@@ -23,16 +23,6 @@
 	display: flex;
 	grid-area: heading;
 	font-size: 36px;
-}
-
-.heading {
-	font-size: clamp(42px, 5vw, 62px);
-	font-family: var(--font-headline);
-	font-weight: var(--fw-bold);
-	line-height: 0.9;
-	letter-spacing: -0.03em;
-
-	color: rgb(var(--theme-primary));
 }
 
 .posts {

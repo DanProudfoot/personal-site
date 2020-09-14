@@ -31,6 +31,10 @@
 	@media (--v-lg) {
 		--space: 2rem;
 	}
+
+	--space2: calc(var(--space) * 2);
+	--space3: calc(var(--space) * 3);
+	--space4: calc(var(--space) * 4);
 }
 
 html {
