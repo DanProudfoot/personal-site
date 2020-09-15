@@ -1,6 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-import { PostLink } from 'src/components/atoms';
+import { PostLink, Heading } from 'src/components/atoms';
 
 import style from './posts.module.css';
 
@@ -8,7 +9,7 @@ export function Posts({ pages }) {
 	return (
 		<div className={style.group}>
 			<div className={style.headingContainer}>
-				<h2 className={style.heading}>Oberserve! Things I’ve built!</h2>
+				<Heading>Things I’ve built!</Heading>
 			</div>
 
 			<div className={style.posts}>

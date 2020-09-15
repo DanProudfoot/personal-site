@@ -1,0 +1,19 @@
+.home {
+	overflow: hidden;
+}
+
+.spacer {
+	min-height: 95vh;
+	background: linear-gradient(
+		to bottom,
+		rgba(var(--color-1), 1) 5%,
+		rgba(var(--color-3), 1) 95%
+	);
+	background-attachment: fixed;
+}
+
+.layout {
+	min-height: 100vh;
+
+	padding-bottom: var(--space4);
+}

@@ -9,14 +9,14 @@
 
 	gap: var(--space);
 	padding-bottom: var(--space);
-
+	/*
 	@media (--v-md) {
 		grid-template-columns: 1fr 4fr;
 		grid-template-rows: auto 1fr 32px;
 		grid-template-areas:
 			'heading heading'
 			'. posts';
-	}
+	} */
 }
 
 .headingContainer {
@@ -25,15 +25,10 @@
 	font-size: 36px;
 }
 
-.heading {
-	color: rgb(var(--theme-secondary));
-	line-height: 1;
-
-	font-weight: var(--fw-light);
-	font-family: var(--font-sans);
-	font-size: clamp(28px, 5vw, 36px);
-}
-
 .posts {
 	grid-area: posts;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space);
 }

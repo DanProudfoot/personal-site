@@ -6,7 +6,17 @@ import style from './postlink.module.css';
 
 const variants = {
 	box: {
-		initial: {}
+		initial: {
+			boxShadow: `8px 8px 0px rgba(0, 0, 0, 0.3)`
+		},
+		hover: {
+			boxShadow: `16px 16px 0px rgba(0, 0, 0, 0.3)`
+		},
+		tap: {
+			boxShadow: `0px 0px 0px rgba(0, 0, 0, 0.3)`,
+			x: 8,
+			y: 8
+		}
 	},
 	tag: {
 		initial: {},
@@ -25,6 +35,7 @@ export function PostLink({ post, index }) {
 			variants={variants.box}
 			initial="initial"
 			whileHover="hover"
+			whileTap="tap"
 		>
 			<Link
 				className={style.link}
@@ -33,13 +44,7 @@ export function PostLink({ post, index }) {
 					gridColumnStart: index % 4 === 2 ? 2 : ''
 				}}
 			>
-				<motion.div
-					// layoutId={`title-${post.id}`}
-					variants={variants.tag}
-					className={style.nametag}
-				>
-					{post.frontmatter.title}
-				</motion.div>
+				<div className={style.nametag}>{post.frontmatter.title}</div>
 			</Link>
 		</motion.div>
 	);

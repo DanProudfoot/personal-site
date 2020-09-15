@@ -1,22 +1,26 @@
 .holder {
-	display: flex;
+	background-color: rgba(var(--color-2));
 
-	& + & {
-		margin-top: calc(var(--space) * 2);
-	}
+	box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+
+	display: flex;
+	align-items: stretch;
 }
 
 .link {
 	position: relative;
+	display: block;
+
+	width: 100%;
+
+	padding: 4rem 0.5rem 0.5rem;
 }
 
 .nametag {
-	color: rgb(var(--theme-primary));
+	color: rgb(var(--color-white));
 
-	z-index: 1;
-
-	font-size: clamp(2.5rem, 5vw, 4rem);
-	font-weight: var(--fw-semibold);
-	font-family: var(--font-sans);
-	line-height: 1em;
+	font-size: clamp(1.5rem, 5vw, 2.5rem);
+	font-weight: var(--fw-light);
+	font-family: var(--font-headline);
+	line-height: 1;
 }

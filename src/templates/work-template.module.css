@@ -1,20 +1,22 @@
-.contentSheet {
-	width: 100%;
-	max-width: 1080px;
-	position: relative;
-
-	margin: 0 auto 0 auto;
-
+.spacer {
 	min-height: 80vh;
 
-	padding: calc(var(--space) * 2);
-	padding-bottom: calc(var(--space) * 4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-	background-color: rgba(255, 255, 255, 0.9);
-	color: black;
+	position: relative;
+	z-index: 1;
+}
 
-	border-radius: 1rem 1rem 0 0;
+.layout {
+	min-height: 100vh;
 
+	z-index: 1;
+	position: relative;
+}
+
+.contentSection {
 	display: grid;
 	gap: var(--space);
 	grid-template-columns: 1fr;
@@ -43,42 +45,23 @@
 }
 
 .heading {
-	font-size: clamp(40px, 5vw, 64px);
-	font-weight: var(--fw-light);
-	font-family: var(--font-sans);
-	line-height: 1em;
-
+	color: rgb(var(--color-white));
 	text-align: center;
-
-	/* background-color: rgba(255, 255, 255, 0.5); */
-	padding: 1rem 1rem 0.5rem;
-	border-radius: 1rem;
-
-	/* backdrop-filter: blur(10px); */
-
-	span {
-		filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
-	}
 }
 
 .link {
-	color: #fff;
-	font-size: clamp(24px, 8vw, 28px);
-	font-weight: var(--fw-light);
-	font-family: var(--font-sans);
-
 	grid-area: link;
-
-	background-color: rgba(0, 0, 0, 0.6);
-	padding: 0.5rem 1rem;
-	border-radius: 1rem;
-
 	transition: all 0.2s ease-out;
 
 	&:hover {
-		background-color: rgba(var(--theme-highlight));
-		color: #fff;
+		transform: translateX(20px);
 	}
+}
+
+.linkHeading {
+	font-size: clamp(26px, 5vw, 28px);
+	color: rgb(var(--color-2));
+	text-align: center;
 }
 
 .content {
@@ -98,22 +81,16 @@
 
 .infoItem {
 	& + & {
-		/* &:before {
-			content:
-			border-left: solid 1px var(--color-black);
-			margin: 0 calc(var(--space) / 2);
-		} */
 		margin-left: var(--space);
 	}
 
 	span {
 		font-weight: var(--fw-bold);
-		color: rgb(var(--theme-secondary));
+		color: rgb(var(--theme-primary));
 	}
 }
 
 .stack {
-	/* font-size: clamp(20px, 5vw, 26px); */
 	font-weight: var(--fw-bold);
 }
 
@@ -137,35 +114,13 @@
 	}
 }
 
-.backgroundContainer {
+.underlay {
 	position: fixed;
-
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	top: 0;
-	left: 0;
-	z-index: -1;
-}
 
-.background {
-	width: 100%;
-	height: 100%;
+	background-color: rgba(var(--color-black), 0.6);
 
-	z-index: 1;
-}
-
-.image {
-	background-size: cover;
-	width: 100%;
-	height: 100%;
-}
-
-.bgOverlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-
-	z-index: 2;
-
-	background-color: rgba(var(--color-black), 0.92);
+	z-index: 0;
 }

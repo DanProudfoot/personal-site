@@ -2,26 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { SEO } from 'src/components/atoms';
-import { Main, Section } from 'src/components/molecules';
-import { Hero, Posts } from 'src/components/organisms';
-import { useTheme, useBackground } from 'src/hooks';
+import { HomePage } from 'src/components/organisms';
+import { Transition } from 'src/components/molecules';
 
-export default function Index({ data, location }) {
-	const { introContent, works } = data;
-	useTheme('default');
-	useBackground({ type: 'none' });
-
+export default function Index({ data }) {
 	return (
-		<>
+		<Transition>
 			<SEO title="Home"></SEO>
-			<Main>
-				<Hero content={introContent}></Hero>
-			</Main>
-
-			<Section>
-				<Posts pages={works}></Posts>
-			</Section>
-		</>
+			<HomePage data={data}></HomePage>
+		</Transition>
 	);
 }
 

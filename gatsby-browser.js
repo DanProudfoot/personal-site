@@ -9,7 +9,7 @@
 const React = require('react');
 const { AnimatePresence } = require('framer-motion');
 
-const { Header, BackgroundBlock } = require('./src/components/organisms');
+const { BackgroundBlock } = require('./src/components/organisms');
 const { Page, Links } = require('./src/components/molecules');
 const Providers = require('./src/providers').default;
 
@@ -18,14 +18,23 @@ exports.wrapPageElement = ({ element, props }) => {
 	// including location, data, etc - you don't need to pass it
 	return (
 		<Providers location={props.location}>
-			<>
-				<Page>
-					<Links></Links>
-					<Header {...props}></Header>
-					<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
-				</Page>
-				<BackgroundBlock></BackgroundBlock>
-			</>
+			<Page location={props.location}>
+				<Links></Links>
+				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+			</Page>
+			<BackgroundBlock></BackgroundBlock>
 		</Providers>
 	);
+};
+
+const transitionDelay = 750;
+
+exports.shouldUpdateScroll = ({ routerProps, getSavedScrollPosition }) => {
+	const savedPosition = getSavedScrollPosition(routerProps.location);
+
+	setTimeout(() => {
+		window.scrollTo(...(savedPosition || [0, 0]));
+	}, transitionDelay);
+
+	return false;
 };

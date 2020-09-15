@@ -1,0 +1,55 @@
+.container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+
+	top: 0;
+	left: 0;
+
+	padding: var(--space) 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	pointer-events: none;
+
+	@media (orientation: landscape) {
+		padding: 12vh 0 6vh;
+	}
+}
+
+.line {
+	color: #fff;
+	font-family: var(--font-headline);
+	font-weight: 800;
+	text-transform: uppercase;
+	padding: 0 0.1em;
+
+	font-size: 15vmax;
+	text-align: center;
+	line-height: 1;
+
+	opacity: 0.4;
+
+	white-space: nowrap;
+
+	animation: 3s infinite alternate cubic-bezier(0.85, 0, 0.15, 1);
+	animation-name: weight;
+
+	@media (orientation: landscape) {
+		font-size: 8vmax;
+	}
+}
+
+@keyframes weight {
+	0% {
+		opacity: 0.4;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0.05;
+		transform: scale(1.05);
+	}
+}

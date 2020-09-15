@@ -1,11 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { useLocation, useTheme } from 'src/hooks';
 
 import style from './page.module.css';
+import 'src/styles/main.css';
 
-export function Page({ children }) {
+export function Page({ children, location }) {
 	const theme = useTheme();
 	const { pathname } = useLocation();
 	const isHome = pathname === '/';
@@ -21,6 +23,22 @@ export function Page({ children }) {
 			}}
 		>
 			{children}
+
+			<AnimatePresence>
+				<motion.div
+					key={location.key}
+					className={style.outerWipe}
+					initial={{
+						x: isHome ? '-110%' : '110%'
+					}}
+					exit={{
+						x: isHome ? '110%' : '-110%'
+					}}
+					transition={{ duration: 2 }}
+				>
+					<div className={style.wipe}></div>
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 }
