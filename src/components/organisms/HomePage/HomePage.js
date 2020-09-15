@@ -11,21 +11,21 @@ export function HomePage({ data }) {
 
 	return (
 		<div className={style.home}>
-			<AnimatedText></AnimatedText>
-
-			<div className={style.spacer}></div>
-
-			<JaggedEdge align="both">
-				<Layout className={style.layout}>
-					<Section>
-						<Hero content={introContent}></Hero>
-					</Section>
-
-					<Section>
-						<Posts pages={works}></Posts>
-					</Section>
-				</Layout>
+			<JaggedEdge align="bottom" withShadow>
+				<div className={style.spacer}>
+					<AnimatedText></AnimatedText>
+				</div>
 			</JaggedEdge>
+
+			<Layout className={style.layout}>
+				<Section>
+					<Hero content={introContent}></Hero>
+				</Section>
+
+				<Section>
+					<Posts pages={works}></Posts>
+				</Section>
+			</Layout>
 
 			<Footer></Footer>
 		</div>

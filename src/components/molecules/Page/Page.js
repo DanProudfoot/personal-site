@@ -27,15 +27,17 @@ export function Page({ children, location }) {
 			<AnimatePresence>
 				<motion.div
 					key={location.key}
-					className={style.wipe}
+					className={style.outerWipe}
 					initial={{
-						x: isHome ? '-150vw' : '150vw'
+						x: isHome ? '-100%' : '100%'
 					}}
 					exit={{
-						x: isHome ? '150vw' : '-150vw'
+						x: isHome ? '100%' : '-100%'
 					}}
 					transition={{ duration: 2 }}
-				></motion.div>
+				>
+					<div className={style.wipe}></div>
+				</motion.div>
 			</AnimatePresence>
 		</div>
 	);
