@@ -19,7 +19,7 @@ export function HomePage({ data }) {
 				</div>
 			</JaggedEdge>
 
-			<JaggedEdge align="bottom" withShadow>
+			<JaggedEdge align="bottom" withShadow lightShadow>
 				<Layout className={style.layout}>
 					<Section>
 						<Hero content={introContent}></Hero>

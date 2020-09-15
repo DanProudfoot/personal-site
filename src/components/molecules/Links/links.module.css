@@ -1,22 +1,15 @@
 .links {
-	grid-area: links;
-	z-index: 10;
-	position: relative;
-
-	margin-left: calc(var(--space) * -1);
-
-	@media (--v-md) {
-		margin-left: 0;
-	}
 }
 
-.group {
-	position: relative;
+.links {
+	z-index: 100;
+	position: fixed;
 
-	pointer-events: all;
+	top: var(--space);
+	left: var(--space);
 
 	display: grid;
-	gap: var(--space);
+	gap: calc(var(--space) / 2);
 	grid-auto-columns: min-content;
 	grid-template-rows: 1fr;
 
@@ -24,22 +17,18 @@
 
 	width: max-content;
 
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(var(--color-white), 0.2);
 	padding: 0.5rem 1rem;
+	backdrop-filter: blur(10px);
+
 	border-radius: 1rem;
 
-	/* backdrop-filter: blur(10px); */
-
-	transform-origin: bottom right;
-
-	/* @media (--v-md) {
-		position: fixed;
-	} */
+	filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.1));
 }
 
 .link {
 	font-weight: var(--fw-semibold);
-	font-size: 24px;
+	font-size: 18x;
 
 	display: block;
 
@@ -50,9 +39,7 @@
 
 	padding: 10px;
 
-	/* filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2)); */
-
-	color: rgb(var(--theme-links));
+	color: rgb(var(--color-2));
 	transition: color 0.2s ease-out, background-color 0.2s ease-out;
 
 	&:hover {
@@ -61,8 +48,20 @@
 	}
 }
 
-.active {
-	text-decoration: underline;
+.homeLink {
+	z-index: 100;
+	position: fixed;
+
+	top: var(--space);
+	right: var(--space);
+
+	padding: 0.5rem 1rem;
+	backdrop-filter: blur(10px);
+	background-color: rgba(var(--color-white), 0.2);
+
+	border-radius: 1rem;
+
+	filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.1));
 }
 
 .icon {
@@ -71,7 +70,7 @@
 	display: block;
 
 	@media (--v-md) {
-		width: 48px;
-		height: 48px;
+		width: 40px;
+		height: 40px;
 	}
 }

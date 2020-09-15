@@ -22,11 +22,7 @@
 	--color-black: 43, 45, 44; /*#303633 */
 	--color-white: 244, 244, 244;
 
-	--space: 1rem;
-
-	@media (--v-md) {
-		--space: 1.5rem;
-	}
+	--space: 1.5rem;
 
 	@media (--v-lg) {
 		--space: 2rem;

@@ -29,10 +29,10 @@ export function Page({ children, location }) {
 					key={location.key}
 					className={style.outerWipe}
 					initial={{
-						x: isHome ? '-100%' : '100%'
+						x: isHome ? '-110%' : '110%'
 					}}
 					exit={{
-						x: isHome ? '100%' : '-100%'
+						x: isHome ? '110%' : '-110%'
 					}}
 					transition={{ duration: 2 }}
 				>

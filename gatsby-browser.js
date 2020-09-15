@@ -10,7 +10,7 @@ const React = require('react');
 const { AnimatePresence } = require('framer-motion');
 
 const { BackgroundBlock } = require('./src/components/organisms');
-const { Page } = require('./src/components/molecules');
+const { Page, Links } = require('./src/components/molecules');
 const Providers = require('./src/providers').default;
 
 exports.wrapPageElement = ({ element, props }) => {
@@ -19,7 +19,7 @@ exports.wrapPageElement = ({ element, props }) => {
 	return (
 		<Providers location={props.location}>
 			<Page location={props.location}>
-				{/* <Links></Links> */}
+				<Links></Links>
 				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
 			</Page>
 			<BackgroundBlock></BackgroundBlock>

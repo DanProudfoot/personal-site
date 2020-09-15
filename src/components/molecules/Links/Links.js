@@ -1,51 +1,48 @@
 import React from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import clsx from 'clsx';
+import { Link } from 'gatsby';
+import {
+	motion,
+	useViewportScroll,
+	useTransform,
+	AnimatePresence
+} from 'framer-motion';
 
 import Github from 'src/media/images/github.svg';
 import Email from 'src/media/images/at-sign.svg';
 import Twitter from 'src/media/images/twitter.svg';
+import Home from 'src/media/images/home.svg';
 
 import style from './links.module.css';
+import { useLocation } from 'src/hooks';
 
 const variants = {
-	initial: {
-		// scale: 1.5,
-		// x: '50%',
-		// y: '50%',
-		// filter: 'blur(20px)'
+	group: {
+		initial: {},
+		enter: {}
 	},
-	enter: {
-		// scale: 1,
-		// x: '0%',
-		// y: '0%',
-		// filter: 'blur(0px)',
-		// transition: {
-		// 	delay: 1,
-		// 	duration: 2.5
-		// }
+	home: {
+		hide: {
+			opacity: 0,
+			transition: { delay: 0.75 }
+		},
+		show: {
+			opacity: 1,
+			transition: { delay: 1 }
+		}
 	}
 };
 
 export function Links() {
+	const { pathname } = useLocation();
+	const isHome = pathname === '/';
+
 	const { scrollY } = useViewportScroll();
-	const backgroundTransform = useTransform(
-		scrollY,
-		[0, 300],
-		['rgba(255,255,255, 0)', 'rgba(255,255,255, 0.3)']
-	);
+	const boxOpacity = useTransform(scrollY, [0, 50], [0, 1]);
 
 	return (
-		<div className={style.links}>
-			<motion.div
-				className={style.group}
-				variants={variants}
-				initial="initial"
-				animate="enter"
-				style={{
-					backgroundColor: backgroundTransform
-				}}
-			>
+		<>
+			<motion.div className={style.links} style={{ opacity: boxOpacity }}>
 				<ExternalLink to="https://twitter.com/DanProudfeet">
 					<Twitter className={style.icon}></Twitter>
 				</ExternalLink>
@@ -56,7 +53,23 @@ export function Links() {
 					<Email className={style.icon}></Email>
 				</ExternalLink>
 			</motion.div>
-		</div>
+
+			<AnimatePresence>
+				{!isHome && (
+					<motion.div
+						className={style.homeLink}
+						initial="hide"
+						animate="show"
+						exit="hide"
+						variants={variants.home}
+					>
+						<Link to="/" className={clsx(style.link)}>
+							<Home className={style.icon}></Home>
+						</Link>
+					</motion.div>
+				)}
+			</AnimatePresence>
+		</>
 	);
 }
 

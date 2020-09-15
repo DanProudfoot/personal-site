@@ -40,7 +40,7 @@ export default function WorkTemplate({ data }) {
 	const titleTransformY = useTransform(
 		scrollY,
 		[0, height / 4],
-		['0vh', '35vh']
+		['0vh', '30vh']
 	);
 	const titleScale = useTransform(scrollY, [0, height / 4], [1, 0.75]);
 	const titleSpringScale = useSpring(titleScale, { damping: 30, mass: 1 });
