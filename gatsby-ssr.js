@@ -6,23 +6,21 @@
 
 // You can delete this file if you're not using it
 
-const React = require('react');
-const { AnimatePresence } = require('framer-motion');
+import React from 'react'
 
-const { BackgroundBlock } = require('./src/components/organisms');
-const { Page, Links } = require('./src/components/molecules');
-const Providers = require('./src/providers').default;
+import { Page } from './src/components/molecules'
+import Providers from './src/providers'
 
-exports.wrapPageElement = ({ element, props }) => {
+import 'src/styles/main.css';
+
+export const wrapPageElement = ({ element, props }) => {
 	// props provide same data to Layout as Page element will get
 	// including location, data, etc - you don't need to pass it
 	return (
 		<Providers location={props.location}>
-			<Page location={props.location}>
-				{/* <Links></Links> */}
-				<AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+			<Page >
+				{element}
 			</Page>
-			<BackgroundBlock></BackgroundBlock>
 		</Providers>
 	);
 };

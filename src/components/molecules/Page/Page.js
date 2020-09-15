@@ -2,14 +2,15 @@ import React from 'react';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { BackgroundBlock } from 'src/components/organisms';
+import { Links } from 'src/components/molecules';
 import { useLocation, useTheme } from 'src/hooks';
 
 import style from './page.module.css';
-import 'src/styles/main.css';
 
-export function Page({ children, location }) {
+export function Page({ children }) {
 	const theme = useTheme();
-	const { pathname } = useLocation();
+	const { pathname, key } = useLocation();
 	const isHome = pathname === '/';
 
 	return (
@@ -22,11 +23,13 @@ export function Page({ children, location }) {
 				'--theme-links': theme.links
 			}}
 		>
-			{children}
+			<Links></Links>
+			<AnimatePresence exitBeforeEnter>{children}</AnimatePresence>
+			<BackgroundBlock></BackgroundBlock>
 
 			<AnimatePresence>
 				<motion.div
-					key={location.key}
+					key={key}
 					className={style.outerWipe}
 					initial={{
 						x: isHome ? '-110%' : '110%'
